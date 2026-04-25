@@ -8,7 +8,7 @@
 
 ## Part 1: High-level phases / milestones
 
-- [ ] **P1 — Foundation and data schema**
+- [x] **P1 — Foundation and data schema**
   **Depends on:** none
   Prepare project structure, database schema, migrations, and local dev/test infrastructure.
 
@@ -32,23 +32,23 @@
 
 ### Phase 1 — Foundation and data schema
 
-- [ ] **1.1 Create prototype baseline and conventions**
+- [x] **1.1 Create prototype baseline and conventions**
   **Depends on:** none
   Confirm project folders and naming for Models/Repositories/Services/Controllers; define error response shape and API version prefix for consistency.
 
-- [ ] **1.2 Define domain entities and relationships**
+- [x] **1.2 Define domain entities and relationships**
   **Depends on:** 1.1
   Model `CandidateProfile` with core columns (`Name`, `BirthDate`, `Sex`) plus `CustomFields` (`JSONB`), and `ProfileFieldDefinition` for dynamic field rules.
 
-- [ ] **1.3 Add database context and mappings**
+- [x] **1.3 Add database context and mappings**
   **Depends on:** 1.2
   Configure EF Core mappings (keys, required fields, field-key uniqueness), JSONB mapping for `CustomFields`, B-tree indexes for core fields, and GIN index for `CustomFields`.
 
-- [ ] **1.4 Create initial migrations and seed baseline fields**
+- [x] **1.4 Create initial migrations and seed baseline fields**
   **Depends on:** 1.3
   Generate initial migration and optional seed data for minimum candidate fields needed to create profiles.
 
-- [ ] **1.5 Prepare test infrastructure early**
+- [x] **1.5 Prepare test infrastructure early**
   **Depends on:** 1.4
   Set up test project structure and PostgreSQL testcontainers wiring so integration tests can be added quickly in later phases.
 

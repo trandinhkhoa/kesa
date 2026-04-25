@@ -1,0 +1,6 @@
+@Kesa_HostAddress = http://localhost:5180
+
+GET {{Kesa_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

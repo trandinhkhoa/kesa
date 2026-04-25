@@ -21,3 +21,45 @@
 **Options considered:** (1) Persist `Age` and synchronize updates, (2) Derive `Age` from `BirthDate` at runtime.
 **Decision:** Do not persist `Age`; compute it from `BirthDate` in read/query flows.
 **Reason:** Prevents stale data and eliminates synchronization complexity.
+
+## Project reset strategy for API bootstrap — 2026-04-25
+**Context:** Before implementing Phase 1 task 1.1, the existing project type and starter code needed to be selected.
+**Options considered:** (1) Convert current project in place, (2) split into domain and API projects, (3) reset to a fresh ASP.NET Web API template.
+**Decision:** Reset to a fresh ASP.NET Web API template and overwrite app code while preserving documentation files.
+**Reason:** The user did not need to preserve current app code, and a clean template gives the fastest stable baseline for prototype delivery.
+
+## Error response contract baseline — 2026-04-25
+**Context:** Task 1.1 required defining a standard API error response format.
+**Options considered:** (1) ProblemDetails only, (2) custom error envelope only, (3) hybrid ProblemDetails with `errorCode` extension.
+**Decision:** Use hybrid error responses: ProblemDetails plus `errorCode` extension.
+**Reason:** This preserves standards compatibility and gives explicit business/application error coding.
+
+## API versioning strategy — 2026-04-25
+**Context:** Task 1.1 required selecting an API versioning convention for controller routes.
+**Options considered:** (1) URL versioning (`/api/v1/...`), (2) header versioning, (3) no versioning.
+**Decision:** Use URL versioning with `/api/v1/...`.
+**Reason:** It is explicit, easy to test, and simple for a prototype baseline.
+
+## .NET 10 data stack compatibility — 2026-04-25
+**Context:** During Phase 1 setup, stable Npgsql EF provider versions were not available for EF Core 10, while the project needed to stay on .NET 10.
+**Options considered:** (1) .NET 10 + EF Core 9 + stable Npgsql 9, (2) .NET 10 + EF Core 10 + preview Npgsql provider, (3) switch away from EF Core.
+**Decision:** Keep .NET 10 and use EF Core 9 with stable Npgsql 9.
+**Reason:** This preserves the .NET target while avoiding preview dependency risk and keeping EF-based workflow.
+
+## Candidate sex field modeling — 2026-04-25
+**Context:** Phase 1 data model required selecting how to represent the core `Sex` field.
+**Options considered:** (1) text value with service-layer validation, (2) numeric enum storage, (3) separate lookup table.
+**Decision:** Store `Sex` as text and validate values in service logic.
+**Reason:** This keeps the prototype schema simple and easy to evolve while following service-layer validation rules.
+
+## Baseline dynamic field seed set — 2026-04-25
+**Context:** Phase 1 migration seed data needed default admin-defined fields for dynamic profile attributes.
+**Options considered:** (1) no defaults, (2) seed requested baseline fields, (3) config-driven seed source.
+**Decision:** Seed `address`, `religion` (`buddism`, `christian`, `others`), and `marriage` (`no`, `married`, `divoced`, `widowed`).
+**Reason:** This matches explicit user requirements while keeping startup data minimal.
+
+## Phase 1 test infrastructure stack — 2026-04-25
+**Context:** Task 1.5 required selecting an early integration-test foundation.
+**Options considered:** (1) xUnit + Testcontainers PostgreSQL, (2) NUnit + Testcontainers PostgreSQL, (3) MSTest + Testcontainers PostgreSQL.
+**Decision:** Use xUnit with Testcontainers PostgreSQL.
+**Reason:** It provides straightforward .NET integration-test setup and aligns with project testing guidance.
