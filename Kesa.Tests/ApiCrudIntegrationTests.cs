@@ -127,6 +127,25 @@ public sealed class ApiCrudIntegrationTests(PostgreSqlContainerFixture fixture)
         Assert.Equal(HttpStatusCode.NotFound, getAfterDeleteResponse.StatusCode);
     }
 
+    [Fact]
+    public async Task CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders()
+    {
+        Assert.False(fixture.DockerUnavailable, $"Docker unavailable for testcontainers: {fixture.DockerUnavailableReason}");
+
+        await using var factory = CreateFactory();
+        using var client = factory.CreateClient();
+
+        using var request = new HttpRequestMessage(HttpMethod.Options, "/api/v1/candidates");
+        request.Headers.Add("Origin", "http://localhost:5173");
+        request.Headers.Add("Access-Control-Request-Method", "GET");
+
+        var response = await client.SendAsync(request);
+
+        Assert.True(response.IsSuccessStatusCode);
+        Assert.True(response.Headers.TryGetValues("Access-Control-Allow-Origin", out var origins));
+        Assert.Contains("http://localhost:5173", origins);
+    }
+
     private WebApplicationFactory<Program> CreateFactory()
     {
         return new WebApplicationFactory<Program>()

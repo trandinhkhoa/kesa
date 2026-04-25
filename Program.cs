@@ -5,10 +5,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+const string FrontendCorsPolicyName = "FrontendLocalPolicy";
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(FrontendCorsPolicyName, policyBuilder =>
+    {
+        policyBuilder
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 builder.Services.AddDbContext<KesaDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -65,6 +76,8 @@ app.UseExceptionHandler(errorApp =>
 });
 
 app.UseHttpsRedirection();
+
+app.UseCors(FrontendCorsPolicyName);
 
 app.UseAuthorization();
 

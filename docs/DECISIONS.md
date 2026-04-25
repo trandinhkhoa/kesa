@@ -111,3 +111,15 @@
 **Options considered:** (1) root `frontend/`, (2) backend `wwwroot/`, (3) `docs/ui/`.
 **Decision:** Place all UI code in root `frontend/`.
 **Reason:** It provides clean separation from backend code while keeping the static app structure simple and discoverable.
+
+## Compose orchestration for full local stack — 2026-04-26
+**Context:** The local workflow required starting database, backend API, and frontend UI with a single command.
+**Options considered:** (1) keep frontend outside Compose via Python static server, (2) add frontend service to existing `docker-compose.yml`, (3) maintain a separate compose overlay just for frontend.
+**Decision:** Add a `frontend` service to `docker-compose.yml` so `docker compose up -d` starts DB, backend, and frontend together.
+**Reason:** This provides a simpler one-command developer workflow and keeps local service orchestration consistent.
+
+## Local CORS policy for frontend origin — 2026-04-26
+**Context:** Browser requests from `http://localhost:5173` to backend APIs at `http://localhost:8080` were blocked by CORS preflight checks.
+**Options considered:** (1) allow only `http://localhost:5173`, (2) allow multiple local origins, (3) allow any origin.
+**Decision:** Configure strict CORS allowlist for `http://localhost:5173` only.
+**Reason:** This unblocks local frontend integration while keeping a narrower and safer policy than wildcard origins.

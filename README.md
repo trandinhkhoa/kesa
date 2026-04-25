@@ -7,10 +7,21 @@ Run from repo root:
 docker compose up -d
 ```
 
+This starts:
+- `db` at `localhost:5432`
+- `backend` at `http://localhost:8080`
+- `frontend` at `http://localhost:5173`
+
 View backend logs (follow live output):
 
 ```bash
 docker compose logs -f backend
+```
+
+Optional frontend logs:
+
+```bash
+docker compose logs -f frontend
 ```
 
 Optional useful commands:
@@ -20,6 +31,9 @@ docker compose ps
 docker compose stop
 docker compose down
 ```
+
+Frontend smoke guide:
+- `frontend/README.md`
 
 Set base URL for curl examples:
 
