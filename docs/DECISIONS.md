@@ -99,3 +99,15 @@
 **Options considered:** (1) root `README.md`, (2) `docs/README.md`, (3) append to `docs/runbook.md`.
 **Decision:** Create root `README.md` and place the startup commands plus API query examples there.
 **Reason:** This is the most discoverable default location for quick onboarding and daily local testing.
+
+## Frontend architecture for initial UI implementation — 2026-04-25
+**Context:** Planning was required for implementing a frontend that works with the existing backend API using plain HTML/CSS/JS and explicitly excludes authentication/login.
+**Options considered:** (1) single-page dashboard in one file, (2) multi-page static app by feature, (3) single-page app with modular JavaScript files.
+**Decision:** Use a single-page UI with modular JavaScript files (`config`, `api`, `state`, `fields`, `candidates`, `ui`, `main`) and no authentication/authorization flows.
+**Reason:** This keeps the stack simple while maintaining clear separation of concerns, making candidate and profile-field CRUD features easier to implement and maintain.
+
+## Dedicated frontend folder location — 2026-04-26
+**Context:** The frontend implementation needed a concrete location for all Phase 1-5 UI code artifacts.
+**Options considered:** (1) root `frontend/`, (2) backend `wwwroot/`, (3) `docs/ui/`.
+**Decision:** Place all UI code in root `frontend/`.
+**Reason:** It provides clean separation from backend code while keeping the static app structure simple and discoverable.

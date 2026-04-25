@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesa HR UI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Kesa HR Management</h1>
+      <p class="subtitle">Candidate + Dynamic Profile Field Management</p>
+    </div>
+    <div class="backend-meta">
+      <span>Backend:</span>
+      <code id="backend-url"></code>
+    </div>
+  </header>
+
+  <div id="notification" class="notification hidden" role="status" aria-live="polite"></div>
+
+  <nav class="tabs" aria-label="Main sections">
+    <button id="tab-candidates" class="tab active" data-tab="candidates">Candidates</button>
+    <button id="tab-fields" class="tab" data-tab="fields">Profile Field Definitions</button>
+  </nav>
+
+  <main>
+    <section id="panel-candidates" class="panel">
+      <div class="panel-grid">
+        <article class="card">
+          <div class="card-header">
+            <h2>Candidate List</h2>
+            <button id="candidate-refresh-btn" class="secondary">Refresh</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>BirthDate</th>
+                  <th>Sex</th>
+                  <th>Updated</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="candidate-table-body"></tbody>
+            </table>
+          </div>
+
+          <div id="candidate-empty" class="empty hidden">No candidates found.</div>
+
+          <div class="pagination">
+            <button id="candidate-prev-page" class="secondary">Prev</button>
+            <span id="candidate-page-label">Page 1</span>
+            <button id="candidate-next-page" class="secondary">Next</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>Candidate Form</h2>
+            <span id="candidate-mode-badge" class="badge">Create</span>
+          </div>
+
+          <form id="candidate-form" novalidate>
+            <input id="candidate-id" type="hidden" />
+
+            <label>
+              Name
+              <input id="candidate-name" name="name" type="text" maxlength="200" required />
+            </label>
+
+            <label>
+              Birth Date
+              <input id="candidate-birth-date" name="birthDate" type="date" required />
+            </label>
+
+            <label>
+              Sex
+              <select id="candidate-sex" name="sex" required>
+                <option value="">Select sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <fieldset>
+              <legend>Custom Fields</legend>
+              <div id="candidate-custom-fields" class="dynamic-fields"></div>
+            </fieldset>
+
+            <div id="candidate-form-errors" class="form-errors hidden"></div>
+
+            <div class="form-actions">
+              <button id="candidate-submit-btn" type="submit">Create Candidate</button>
+              <button id="candidate-cancel-btn" class="secondary" type="button">Reset</button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section id="panel-fields" class="panel hidden">
+      <div class="panel-grid">
+        <article class="card">
+          <div class="card-header">
+            <h2>Field Definitions</h2>
+            <button id="field-refresh-btn" class="secondary">Refresh</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Key</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Active</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="field-table-body"></tbody>
+            </table>
+          </div>
+
+          <div id="field-empty" class="empty hidden">No field definitions found.</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>Field Definition Form</h2>
+            <span id="field-mode-badge" class="badge">Create</span>
+          </div>
+
+          <form id="field-form" novalidate>
+            <input id="field-id" type="hidden" />
+
+            <label>
+              Name
+              <input id="field-name" name="name" type="text" maxlength="128" required />
+            </label>
+
+            <label>
+              Key
+              <input id="field-key" name="key" type="text" maxlength="128" required />
+            </label>
+
+            <label>
+              Data Type
+              <select id="field-data-type" name="dataType" required>
+                <option value="">Select type</option>
+                <option value="String">String</option>
+                <option value="Number">Number</option>
+                <option value="Date">Date</option>
+                <option value="Boolean">Boolean</option>
+                <option value="Enum">Enum</option>
+              </select>
+            </label>
+
+            <label class="inline-label">
+              <input id="field-is-required" name="isRequired" type="checkbox" />
+              Required
+            </label>
+
+            <label class="inline-label">
+              <input id="field-is-active" name="isActive" type="checkbox" checked />
+              Active
+            </label>
+
+            <label id="field-options-wrapper" class="hidden">
+              Enum Options (comma separated)
+              <input id="field-options" name="options" type="text" placeholder="junior,mid,senior" />
+            </label>
+
+            <div id="field-form-errors" class="form-errors hidden"></div>
+
+            <div class="form-actions">
+              <button id="field-submit-btn" type="submit">Create Field</button>
+              <button id="field-cancel-btn" class="secondary" type="button">Reset</button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
