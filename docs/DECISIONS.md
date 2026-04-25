@@ -63,3 +63,9 @@
 **Options considered:** (1) xUnit + Testcontainers PostgreSQL, (2) NUnit + Testcontainers PostgreSQL, (3) MSTest + Testcontainers PostgreSQL.
 **Decision:** Use xUnit with Testcontainers PostgreSQL.
 **Reason:** It provides straightforward .NET integration-test setup and aligns with project testing guidance.
+
+## Phase 2 repository and data-access contracts — 2026-04-25
+**Context:** Implementing Phase 2 required finalizing repository interface return shapes, candidate list pagination behavior, and delete semantics before coding data-access logic.
+**Options considered:** (1) entity-first repository contracts with nullable/bool not-found signaling + offset pagination (`pageNumber`, `pageSize`, `totalCount`) + hard delete, (2) result-wrapper repository contracts + limit/offset without total count + hard delete, (3) split read/write repository models + cursor pagination + soft delete.
+**Decision:** Use entity-first repository contracts returning domain entities with nullable/bool for missing rows; use offset pagination returning `(items, totalCount)` for candidate lists; use hard delete in repositories for the prototype.
+**Reason:** This provides the closest fit to the current prototype scope, keeps repository complexity low, aligns with familiar JPA-style CRUD patterns, and avoids schema changes that are unnecessary for Phase 2.

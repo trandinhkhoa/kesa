@@ -1,4 +1,5 @@
 using Kesa.Data;
+using Kesa.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,8 @@ builder.Services.AddDbContext<KesaDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddScoped<IProfileFieldDefinitionRepository, ProfileFieldDefinitionRepository>();
+builder.Services.AddScoped<ICandidateProfileRepository, CandidateProfileRepository>();
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.InvalidModelStateResponseFactory = context =>

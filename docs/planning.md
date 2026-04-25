@@ -12,7 +12,7 @@
   **Depends on:** none
   Prepare project structure, database schema, migrations, and local dev/test infrastructure.
 
-- [ ] **P2 — Data access layer**
+- [x] **P2 — Data access layer**
   **Depends on:** P1
   Implement repositories for candidate profiles (core columns + `JSONB` custom fields) and field definitions.
 
@@ -54,19 +54,19 @@
 
 ### Phase 2 — Data access layer
 
-- [ ] **2.1 Implement field-definition repository interfaces**
+- [x] **2.1 Implement field-definition repository interfaces**
   **Depends on:** 1.5
   Add repository contracts for creating, listing, updating, and deleting profile field definitions.
 
-- [ ] **2.2 Implement candidate profile repository interfaces**
+- [x] **2.2 Implement candidate profile repository interfaces**
   **Depends on:** 1.5
   Add repository contracts for candidate create/read/update/delete and list with pagination hooks.
 
-- [ ] **2.3 Implement repository classes with EF Core**
+- [x] **2.3 Implement repository classes with EF Core**
   **Depends on:** 2.1, 2.2
   Implement concrete repositories with transactional write behavior for profile core columns and `CustomFields` JSONB payloads.
 
-- [ ] **2.4 Add repository-level query safeguards**
+- [x] **2.4 Add repository-level query safeguards**
   **Depends on:** 2.3
   Add defensive checks for missing records and safe handling of soft/hard delete strategy chosen for prototype.
 

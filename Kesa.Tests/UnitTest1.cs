@@ -1,4 +1,7 @@
-﻿using Testcontainers.PostgreSql;
+﻿using Kesa.Data;
+using Microsoft.EntityFrameworkCore;
+using Testcontainers.PostgreSql;
+using Xunit;
 
 namespace Kesa.Tests;
 
@@ -21,6 +24,9 @@ public sealed class PostgreSqlContainerFixture : IAsyncLifetime
         try
         {
             await _container.StartAsync();
+
+            await using var context = CreateDbContext();
+            await context.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
@@ -32,6 +38,32 @@ public sealed class PostgreSqlContainerFixture : IAsyncLifetime
     public async Task DisposeAsync()
     {
         await _container.DisposeAsync();
+    }
+
+    /// <summary>
+    /// Creates a new DbContext instance connected to the test PostgreSQL container.
+    /// </summary>
+    /// <returns>A configured <see cref="KesaDbContext"/> instance.</returns>
+    public KesaDbContext CreateDbContext()
+    {
+        var options = new DbContextOptionsBuilder<KesaDbContext>()
+            .UseNpgsql(ConnectionString)
+            .Options;
+
+        return new KesaDbContext(options);
+    }
+
+    /// <summary>
+    /// Resets application tables to ensure test isolation while preserving migration history.
+    /// </summary>
+    /// <returns>A task that completes when table cleanup is done.</returns>
+    public async Task ResetDatabaseAsync()
+    {
+        await using var context = CreateDbContext();
+
+        await context.Database.ExecuteSqlRawAsync("DELETE FROM candidate_profiles;");
+        await context.Database.ExecuteSqlRawAsync("DELETE FROM profile_field_definitions;");
+        await context.Database.ExecuteSqlRawAsync("DELETE FROM users;");
     }
 }
 
@@ -45,10 +77,15 @@ public sealed class PostgreSqlCollection : ICollectionFixture<PostgreSqlContaine
 public class PostgreSqlInfrastructureTests(PostgreSqlContainerFixture fixture)
 {
     [Fact]
-    public void ShouldProvideConnectionStringFromContainer()
+    public async Task ShouldProvideConnectionStringAndApplyMigrationsAsync()
     {
         Assert.False(fixture.DockerUnavailable, $"Docker unavailable for testcontainers: {fixture.DockerUnavailableReason}");
 
         Assert.False(string.IsNullOrWhiteSpace(fixture.ConnectionString));
+
+        await using var context = fixture.CreateDbContext();
+        var canConnect = await context.Database.CanConnectAsync();
+
+        Assert.True(canConnect);
     }
 }
