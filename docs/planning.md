@@ -20,7 +20,7 @@
   **Depends on:** P2
   Implement validation and CRUD workflows in services, including dynamic field constraints.
 
-- [ ] **P4 — API/controllers and contracts**
+- [x] **P4 — API/controllers and contracts**
   **Depends on:** P3
   Expose REST endpoints for candidate CRUD and admin field-definition CRUD.
 
@@ -94,19 +94,19 @@
 
 ### Phase 4 — API/controllers and contracts
 
-- [ ] **4.1 Implement admin field-definition controllers**
+- [x] **4.1 Implement admin field-definition controllers**
   **Depends on:** 3.5
   Implement `GET/POST/PUT/DELETE /api/admin/profile-fields` endpoints delegating all business rules to services.
 
-- [ ] **4.2 Implement candidate profile controllers**
+- [x] **4.2 Implement candidate profile controllers**
   **Depends on:** 3.5
   Implement `POST/GET/PUT/DELETE /api/candidates` and list endpoint with pagination parameters.
 
-- [ ] **4.3 Add request validation and API error responses**
+- [x] **4.3 Add request validation and API error responses**
   **Depends on:** 4.1, 4.2
   Add model validation, status code mapping, and uniform error envelope.
 
-- [ ] **4.4 Add OpenAPI documentation for prototype endpoints**
+- [x] **4.4 Add OpenAPI documentation for prototype endpoints**
   **Depends on:** 4.3
   Document request/response schemas and sample payloads for candidate and admin flows.
 
