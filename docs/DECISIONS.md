@@ -87,3 +87,15 @@
 **Options considered:** (1) WebApplicationFactory-based controller integration tests + shared testcontainer fixture with table resets + dedicated `docs/runbook.md`, (2) controller unit tests only + isolated containers per class + runbook embedded in specs, (3) minimal endpoint invocation tests + no table reset strategy + root README-only guide.
 **Decision:** Use WebApplicationFactory + HttpClient for controller CRUD integration tests, reuse shared PostgreSQL testcontainer fixture with database resets between tests, and create a dedicated `docs/runbook.md` for setup/run/test/smoke documentation and known limitations.
 **Reason:** This gives realistic pipeline verification while keeping test execution efficient, and provides a clear operational document without overloading specification files.
+
+## Local environment orchestration and initial Linode deployment path — 2026-04-25
+**Context:** The project needed a practical local setup for backend + PostgreSQL testing and a short-term deployment strategy for Linode.
+**Options considered:** (1) Docker Compose for local only and redesign deployment stack immediately, (2) Docker Compose for both local and initial single-VM Linode deployment, (3) move directly to managed orchestration before first deployment.
+**Decision:** Use Docker Compose now for local backend + PostgreSQL development and keep Docker Compose for the initial Linode deployment on a single VM.
+**Reason:** This minimizes setup friction, keeps local and server runtime consistent, and is sufficient for current prototype scope while allowing future migration to more advanced orchestration if needed.
+
+## Startup and API query guide file location — 2026-04-25
+**Context:** A consolidated summary of startup commands and executed API query examples needed to be persisted in project docs.
+**Options considered:** (1) root `README.md`, (2) `docs/README.md`, (3) append to `docs/runbook.md`.
+**Decision:** Create root `README.md` and place the startup commands plus API query examples there.
+**Reason:** This is the most discoverable default location for quick onboarding and daily local testing.
