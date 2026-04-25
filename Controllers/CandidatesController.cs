@@ -43,7 +43,7 @@ public sealed class CandidatesController(ICandidateProfileService service) : Api
         }
 
         var response = ToApiResponse(result.Value!);
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = response.Id }, response);
+        return CreatedAtRoute("GetCandidateById", new { id = response.Id }, response);
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public sealed class CandidatesController(ICandidateProfileService service) : Api
     /// <param name="id">Candidate id.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>Candidate profile response.</returns>
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id:guid}", Name = "GetCandidateById")]
     [ProducesResponseType(typeof(CandidateApiResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]

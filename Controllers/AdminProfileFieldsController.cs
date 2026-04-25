@@ -40,7 +40,7 @@ public sealed class AdminProfileFieldsController(IProfileFieldDefinitionService 
     /// <param name="id">Field definition id.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>Field definition data.</returns>
-    [HttpGet("{id:guid}")]
+    [HttpGet("{id:guid}", Name = "GetAdminProfileFieldById")]
     [ProducesResponseType(typeof(ProfileFieldDefinitionApiResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -90,7 +90,7 @@ public sealed class AdminProfileFieldsController(IProfileFieldDefinitionService 
         }
 
         var response = ToApiResponse(result.Value!);
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = response.Id }, response);
+        return CreatedAtRoute("GetAdminProfileFieldById", new { id = response.Id }, response);
     }
 
     /// <summary>

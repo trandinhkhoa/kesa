@@ -12,7 +12,7 @@ namespace Kesa.Tests;
 public sealed class AdminProfileFieldsControllerTests
 {
     [Fact]
-    public async Task CreateAsync_ShouldReturnCreatedAtActionWhenServiceSucceeds()
+    public async Task CreateAsync_ShouldReturnCreatedAtRouteWhenServiceSucceeds()
     {
         var response = new ProfileFieldDefinitionResponse
         {
@@ -42,8 +42,8 @@ public sealed class AdminProfileFieldsControllerTests
             IsActive = true
         });
 
-        var created = Assert.IsType<CreatedAtActionResult>(result.Result);
-        Assert.Equal(nameof(AdminProfileFieldsController.GetByIdAsync), created.ActionName);
+        var created = Assert.IsType<CreatedAtRouteResult>(result.Result);
+        Assert.Equal("GetAdminProfileFieldById", created.RouteName);
         Assert.Equal(201, created.StatusCode);
     }
 

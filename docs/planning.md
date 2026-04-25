@@ -24,7 +24,7 @@
   **Depends on:** P3
   Expose REST endpoints for candidate CRUD and admin field-definition CRUD.
 
-- [ ] **P5 — Testing, hardening, and prototype readiness**
+- [x] **P5 — Testing, hardening, and prototype readiness**
   **Depends on:** P4
   Add automated tests (including integration tests with PostgreSQL testcontainers), fix defects, and ensure prototype run instructions are complete.
 
@@ -112,22 +112,22 @@
 
 ### Phase 5 — Testing, hardening, and prototype readiness
 
-- [ ] **5.1 Add model and repository integration tests**
+- [x] **5.1 Add model and repository integration tests**
   **Depends on:** 4.4
   Add integration tests using PostgreSQL testcontainers for persistence correctness and relational behavior.
 
-- [ ] **5.2 Add service tests for dynamic-field validation rules**
+- [x] **5.2 Add service tests for dynamic-field validation rules**
   **Depends on:** 5.1
   Cover required core columns, invalid dynamic data types, enum validation, unknown field keys, and age derivation edge cases.
 
-- [ ] **5.3 Add controller integration tests for CRUD endpoints**
+- [x] **5.3 Add controller integration tests for CRUD endpoints**
   **Depends on:** 5.2
   Verify status codes, response contracts, and end-to-end candidate + admin workflows.
 
-- [ ] **5.4 Perform prototype smoke tests and bug fixes**
+- [x] **5.4 Perform prototype smoke tests and bug fixes**
   **Depends on:** 5.3
   Run full local workflow from field-definition setup to candidate CRUD and resolve blocking defects.
 
-- [ ] **5.5 Finalize prototype runbook and known limitations**
+- [x] **5.5 Finalize prototype runbook and known limitations**
   **Depends on:** 5.4
   Document setup, migrations, test commands, API usage, and explicitly list deferred items (auth/authz and other out-of-scope work).
