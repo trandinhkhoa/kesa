@@ -1,5 +1,6 @@
 using Kesa.Data;
 using Kesa.Repositories;
+using Kesa.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<KesaDbContext>(options =>
 });
 builder.Services.AddScoped<IProfileFieldDefinitionRepository, ProfileFieldDefinitionRepository>();
 builder.Services.AddScoped<ICandidateProfileRepository, CandidateProfileRepository>();
+builder.Services.AddScoped<IProfileFieldDefinitionService, ProfileFieldDefinitionService>();
+builder.Services.AddScoped<ICandidateProfileService, CandidateProfileService>();
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.InvalidModelStateResponseFactory = context =>

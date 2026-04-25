@@ -16,7 +16,7 @@
   **Depends on:** P1
   Implement repositories for candidate profiles (core columns + `JSONB` custom fields) and field definitions.
 
-- [ ] **P3 — Service layer business logic**
+- [x] **P3 — Service layer business logic**
   **Depends on:** P2
   Implement validation and CRUD workflows in services, including dynamic field constraints.
 
@@ -72,23 +72,23 @@
 
 ### Phase 3 — Service layer business logic
 
-- [ ] **3.1 Define service DTOs and service contracts**
+- [x] **3.1 Define service DTOs and service contracts**
   **Depends on:** 2.4
   Create request/response DTOs for candidate and field-definition operations, keeping controllers thin.
 
-- [ ] **3.2 Implement field-definition service rules**
+- [x] **3.2 Implement field-definition service rules**
   **Depends on:** 3.1
   Implement add/edit/remove logic with constraints (unique field key, supported data types, required/active semantics).
 
-- [ ] **3.3 Implement candidate create/update validation logic**
+- [x] **3.3 Implement candidate create/update validation logic**
   **Depends on:** 3.2
   Validate candidate payloads by enforcing core required columns and validating `customFields` against active `ProfileFieldDefinition` rules (required fields, data types, enum options).
 
-- [ ] **3.4 Implement candidate read/list/delete service flows**
+- [x] **3.4 Implement candidate read/list/delete service flows**
   **Depends on:** 3.3
   Implement retrieval and delete behavior, including age derivation from `BirthDate`, not-found handling, and validation error handling.
 
-- [ ] **3.5 Add service-layer logging and error mapping**
+- [x] **3.5 Add service-layer logging and error mapping**
   **Depends on:** 3.4
   Add structured logging and map domain errors to consistent service result types.
 

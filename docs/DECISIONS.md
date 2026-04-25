@@ -69,3 +69,9 @@
 **Options considered:** (1) entity-first repository contracts with nullable/bool not-found signaling + offset pagination (`pageNumber`, `pageSize`, `totalCount`) + hard delete, (2) result-wrapper repository contracts + limit/offset without total count + hard delete, (3) split read/write repository models + cursor pagination + soft delete.
 **Decision:** Use entity-first repository contracts returning domain entities with nullable/bool for missing rows; use offset pagination returning `(items, totalCount)` for candidate lists; use hard delete in repositories for the prototype.
 **Reason:** This provides the closest fit to the current prototype scope, keeps repository complexity low, aligns with familiar JPA-style CRUD patterns, and avoids schema changes that are unnecessary for Phase 2.
+
+## Phase 3 service contracts and validation policies — 2026-04-25
+**Context:** Before implementing service DTOs, validation rules, and error mapping for candidate and profile-field workflows, service-layer contract and validation policies had to be locked.
+**Options considered:** (1) unified `ServiceResult<T>` + `Dictionary<string, JsonElement>` custom field DTO + reject unknown/inactive custom-field keys + restrict `Sex` to `Male/Female/Other`, (2) exception-driven service errors + raw JSON string custom field DTO + ignore unknown keys + accept any non-empty `Sex`, (3) per-operation service result shapes + `JsonDocument` DTO + permissive unknown keys + dynamic `Sex` validation.
+**Decision:** Use unified `ServiceResult<T>` / `ServiceResult` with structured error payloads; use `Dictionary<string, JsonElement>` for candidate custom fields in DTOs; reject unknown and inactive custom-field keys; validate `Sex` as one of `Male`, `Female`, `Other` (case-insensitive).
+**Reason:** This keeps service behavior explicit and testable, enforces dynamic-field integrity as required by specs, and provides consistent error mapping for upcoming controller/API layers.
