@@ -4,7 +4,7 @@ const vi = {
   backendLabel: "Backend:",
 
   tabCandidates: "Ứng Viên",
-  tabFields: "Định Nghĩa Trường Thông Tin",
+  tabFields: "Các trường thông tin mặc định",
 
   candidateListTitle: "Danh Sách Ứng Viên",
   fieldListTitle: "Danh Sách Định Nghĩa Trường",
