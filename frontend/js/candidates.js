@@ -15,10 +15,6 @@ function getById(id) {
   return document.getElementById(id);
 }
 
-function activeFieldDefinitions() {
-  return state.fieldDefinitions.filter((item) => item.isActive);
-}
-
 function formatDateOnly(value) {
   if (!value) {
     return "-";
@@ -158,13 +154,43 @@ function setCandidateMode(mode) {
   submitButton.disabled = isReadonly;
 }
 
+function buildGenericFieldControl(key, value) {
+  const wrapper = document.createElement("label");
+  wrapper.dataset.fieldKey = key;
+  wrapper.dataset.fieldType = "String";
+  wrapper.dataset.fieldRequired = "false";
+  wrapper.append(key);
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.dataset.customInput = "true";
+  if (value !== undefined && value !== null) {
+    input.value = String(value);
+  }
+  wrapper.appendChild(input);
+
+  return wrapper;
+}
+
 function renderDynamicCustomFields(customValues = {}) {
   const container = getById("candidate-custom-fields");
   container.innerHTML = "";
 
-  activeFieldDefinitions().forEach((definition) => {
-    const value = customValues[definition.key];
-    container.appendChild(buildCustomFieldControl(definition, value));
+  const keys = Object.keys(customValues);
+  if (!keys.length) {
+    return;
+  }
+
+  keys.forEach((key) => {
+    const definition = state.fieldDefinitions.find(
+      (d) => d.key === key && d.isActive
+    );
+    const value = customValues[key];
+    if (definition) {
+      container.appendChild(buildCustomFieldControl(definition, value));
+    } else {
+      container.appendChild(buildGenericFieldControl(key, value));
+    }
   });
 }
 
