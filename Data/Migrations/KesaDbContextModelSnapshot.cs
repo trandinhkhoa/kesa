@@ -77,7 +77,7 @@ namespace Kesa.Data.Migrations
                     b.ToTable("candidate_profiles", (string)null);
                 });
 
-            modelBuilder.Entity("Kesa.Models.ProfileFieldDefinition", b =>
+            modelBuilder.Entity("Kesa.Models.DefaultFields", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");

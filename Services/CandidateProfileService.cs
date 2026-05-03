@@ -292,7 +292,7 @@ public sealed class CandidateProfileService(
         return AllowedSexValues.First(x => x.Equals(sex.Trim(), StringComparison.OrdinalIgnoreCase));
     }
 
-    private static string? ValidateCustomFieldValueType(ProfileFieldDefinition definition, JsonElement value)
+    private static string? ValidateCustomFieldValueType(DefaultFields definition, JsonElement value)
     {
         return definition.DataType switch
         {
@@ -305,7 +305,7 @@ public sealed class CandidateProfileService(
         };
     }
 
-    private static string? ValidateEnumValue(ProfileFieldDefinition definition, JsonElement value)
+    private static string? ValidateEnumValue(DefaultFields definition, JsonElement value)
     {
         if (value.ValueKind != JsonValueKind.String)
         {

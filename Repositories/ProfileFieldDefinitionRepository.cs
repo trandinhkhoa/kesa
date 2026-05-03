@@ -10,8 +10,8 @@ namespace Kesa.Repositories;
 public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : IProfileFieldDefinitionRepository
 {
     /// <inheritdoc />
-    public async Task<ProfileFieldDefinition> CreateAsync(
-        ProfileFieldDefinition fieldDefinition,
+    public async Task<DefaultFields> CreateAsync(
+        DefaultFields fieldDefinition,
         CancellationToken cancellationToken = default)
     {
         await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
@@ -25,7 +25,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
     }
 
     /// <inheritdoc />
-    public Task<ProfileFieldDefinition?> GetByIdAsync(
+    public Task<DefaultFields?> GetByIdAsync(
         Guid id,
         CancellationToken cancellationToken = default)
     {
@@ -35,7 +35,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
     }
 
     /// <inheritdoc />
-    public Task<ProfileFieldDefinition?> GetByKeyAsync(
+    public Task<DefaultFields?> GetByKeyAsync(
         string key,
         CancellationToken cancellationToken = default)
     {
@@ -45,7 +45,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
     }
 
     /// <inheritdoc />
-    public async Task<IReadOnlyList<ProfileFieldDefinition>> ListAsync(
+    public async Task<IReadOnlyList<DefaultFields>> ListAsync(
         CancellationToken cancellationToken = default)
     {
         return await dbContext.ProfileFieldDefinitions
@@ -56,8 +56,8 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
     }
 
     /// <inheritdoc />
-    public async Task<ProfileFieldDefinition?> UpdateAsync(
-        ProfileFieldDefinition fieldDefinition,
+    public async Task<DefaultFields?> UpdateAsync(
+        DefaultFields fieldDefinition,
         CancellationToken cancellationToken = default)
     {
         var existing = await dbContext.ProfileFieldDefinitions

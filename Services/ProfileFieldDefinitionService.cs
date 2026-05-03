@@ -44,7 +44,7 @@ public sealed class ProfileFieldDefinitionService(
             }
 
             var now = DateTime.UtcNow;
-            var entity = new ProfileFieldDefinition
+            var entity = new DefaultFields
             {
                 Id = Guid.NewGuid(),
                 Name = request.Name.Trim(),
@@ -279,7 +279,7 @@ public sealed class ProfileFieldDefinitionService(
         return JsonSerializer.Serialize(normalizedOptions);
     }
 
-    private static ProfileFieldDefinitionResponse ToResponse(ProfileFieldDefinition entity)
+    private static ProfileFieldDefinitionResponse ToResponse(DefaultFields entity)
     {
         return new ProfileFieldDefinitionResponse
         {

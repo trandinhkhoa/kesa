@@ -3,7 +3,7 @@ namespace Kesa.Models;
 /// <summary>
 /// Defines metadata and validation rules for dynamic candidate profile fields stored in JSONB.
 /// </summary>
-public class ProfileFieldDefinition
+public class DefaultFields
 {
     /// <summary>
     /// Unique identifier for the field definition.

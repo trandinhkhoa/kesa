@@ -21,7 +21,7 @@ public sealed class ModelAndRepositoryIntegrationTests(PostgreSqlContainerFixtur
         await using var context = fixture.CreateDbContext();
         var repository = new ProfileFieldDefinitionRepository(context);
 
-        await repository.CreateAsync(new ProfileFieldDefinition
+        await repository.CreateAsync(new DefaultFields
         {
             Id = Guid.NewGuid(),
             Name = "Office",
@@ -33,7 +33,7 @@ public sealed class ModelAndRepositoryIntegrationTests(PostgreSqlContainerFixtur
             UpdatedAt = DateTime.UtcNow
         });
 
-        await Assert.ThrowsAsync<DbUpdateException>(() => repository.CreateAsync(new ProfileFieldDefinition
+        await Assert.ThrowsAsync<DbUpdateException>(() => repository.CreateAsync(new DefaultFields
         {
             Id = Guid.NewGuid(),
             Name = "Office Duplicate",

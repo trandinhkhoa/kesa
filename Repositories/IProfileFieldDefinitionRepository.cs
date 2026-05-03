@@ -13,8 +13,8 @@ public interface IProfileFieldDefinitionRepository
     /// <param name="fieldDefinition">Field definition entity to persist.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The created field definition.</returns>
-    Task<ProfileFieldDefinition> CreateAsync(
-        ProfileFieldDefinition fieldDefinition,
+    Task<DefaultFields> CreateAsync(
+        DefaultFields fieldDefinition,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -23,7 +23,7 @@ public interface IProfileFieldDefinitionRepository
     /// <param name="id">Field definition identifier.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The field definition when found; otherwise null.</returns>
-    Task<ProfileFieldDefinition?> GetByIdAsync(
+    Task<DefaultFields?> GetByIdAsync(
         Guid id,
         CancellationToken cancellationToken = default);
 
@@ -33,7 +33,7 @@ public interface IProfileFieldDefinitionRepository
     /// <param name="key">Field definition key.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The field definition when found; otherwise null.</returns>
-    Task<ProfileFieldDefinition?> GetByKeyAsync(
+    Task<DefaultFields?> GetByKeyAsync(
         string key,
         CancellationToken cancellationToken = default);
 
@@ -42,7 +42,7 @@ public interface IProfileFieldDefinitionRepository
     /// </summary>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>All field definitions in ascending name order.</returns>
-    Task<IReadOnlyList<ProfileFieldDefinition>> ListAsync(
+    Task<IReadOnlyList<DefaultFields>> ListAsync(
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -51,8 +51,8 @@ public interface IProfileFieldDefinitionRepository
     /// <param name="fieldDefinition">Field definition with updated values.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The updated field definition when found; otherwise null.</returns>
-    Task<ProfileFieldDefinition?> UpdateAsync(
-        ProfileFieldDefinition fieldDefinition,
+    Task<DefaultFields?> UpdateAsync(
+        DefaultFields fieldDefinition,
         CancellationToken cancellationToken = default);
 
     /// <summary>

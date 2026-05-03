@@ -31,7 +31,7 @@ public class KesaDbContext : DbContext
     /// <summary>
     /// Dynamic field definitions used to validate custom field keys and values.
     /// </summary>
-    public DbSet<ProfileFieldDefinition> ProfileFieldDefinitions => Set<ProfileFieldDefinition>();
+    public DbSet<DefaultFields> ProfileFieldDefinitions => Set<DefaultFields>();
 
     /// <summary>
     /// Configures entity mappings, indexes, constraints, and seed data.
@@ -110,7 +110,7 @@ public class KesaDbContext : DbContext
                 .HasOperators("jsonb_path_ops");
         });
 
-        modelBuilder.Entity<ProfileFieldDefinition>(entity =>
+        modelBuilder.Entity<DefaultFields>(entity =>
         {
             entity.ToTable("profile_field_definitions");
 
@@ -143,7 +143,7 @@ public class KesaDbContext : DbContext
             var seedTimestamp = new DateTime(2026, 4, 25, 0, 0, 0, DateTimeKind.Utc);
 
             entity.HasData(
-                new ProfileFieldDefinition
+                new DefaultFields
                 {
                     Id = addressFieldId,
                     Name = "Address",
@@ -156,7 +156,7 @@ public class KesaDbContext : DbContext
                     CreatedAt = seedTimestamp,
                     UpdatedAt = seedTimestamp
                 },
-                new ProfileFieldDefinition
+                new DefaultFields
                 {
                     Id = religionFieldId,
                     Name = "Religion",
@@ -169,7 +169,7 @@ public class KesaDbContext : DbContext
                     CreatedAt = seedTimestamp,
                     UpdatedAt = seedTimestamp
                 },
-                new ProfileFieldDefinition
+                new DefaultFields
                 {
                     Id = marriageFieldId,
                     Name = "Marriage",

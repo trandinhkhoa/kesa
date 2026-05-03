@@ -19,7 +19,7 @@ public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFix
         await using var context = fixture.CreateDbContext();
         var repository = new ProfileFieldDefinitionRepository(context);
 
-        var entity = new ProfileFieldDefinition
+        var entity = new DefaultFields
         {
             Id = Guid.NewGuid(),
             Name = "Language",
@@ -50,7 +50,7 @@ public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFix
         await using var context = fixture.CreateDbContext();
         var repository = new ProfileFieldDefinitionRepository(context);
 
-        var updated = await repository.UpdateAsync(new ProfileFieldDefinition
+        var updated = await repository.UpdateAsync(new DefaultFields
         {
             Id = Guid.NewGuid(),
             Name = "Unknown",
@@ -74,7 +74,7 @@ public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFix
         await using var context = fixture.CreateDbContext();
         var repository = new ProfileFieldDefinitionRepository(context);
 
-        var created = await repository.CreateAsync(new ProfileFieldDefinition
+        var created = await repository.CreateAsync(new DefaultFields
         {
             Id = Guid.NewGuid(),
             Name = "Certification",
