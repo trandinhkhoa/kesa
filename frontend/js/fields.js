@@ -1,5 +1,6 @@
 import { del, get, post, put } from "./api.js";
 import { state } from "./state.js";
+import { t } from "./i18n.js";
 import {
   clearFormErrors,
   confirmDelete,
@@ -38,13 +39,13 @@ function renderFieldRows() {
           <td>${item.name}</td>
           <td><code>${item.key}</code></td>
           <td>${item.dataType}</td>
-          <td>${item.isRequired ? "Yes" : "No"}</td>
-          <td>${item.isActive ? "Yes" : "No"}</td>
+          <td>${item.isRequired ? t("yes") : t("no")}</td>
+          <td>${item.isActive ? t("yes") : t("no")}</td>
           <td>
             <div class="row-actions">
-              <button class="secondary" data-field-view="${item.id}">View</button>
-              <button class="secondary" data-field-edit="${item.id}">Edit</button>
-              <button class="danger" data-field-delete="${item.id}">Delete</button>
+              <button class="secondary" data-field-view="${item.id}">${t("view")}</button>
+              <button class="secondary" data-field-edit="${item.id}">${t("edit")}</button>
+              <button class="danger" data-field-delete="${item.id}">${t("deleteAction")}</button>
             </div>
           </td>
         </tr>
@@ -66,8 +67,8 @@ function resetFieldForm() {
   getById("field-options").value = "";
   getById("field-options-wrapper").classList.add("hidden");
 
-  getById("field-mode-badge").textContent = "Create";
-  getById("field-submit-btn").textContent = "Create Field";
+  getById("field-mode-badge").textContent = t("modeCreate");
+  getById("field-submit-btn").textContent = t("createField");
   getById("field-form").querySelectorAll("input,select,button").forEach((node) => {
     if (node.id !== "field-submit-btn" && node.id !== "field-cancel-btn") {
       node.disabled = false;
@@ -93,8 +94,8 @@ function fillFieldForm(item, mode = "edit") {
   getById("field-options-wrapper").classList.toggle("hidden", !isEnum);
 
   const isView = mode === "view";
-  getById("field-mode-badge").textContent = isView ? "Read" : "Edit";
-  getById("field-submit-btn").textContent = isView ? "Create Field" : "Update Field";
+  getById("field-mode-badge").textContent = isView ? t("modeRead") : t("modeEdit");
+  getById("field-submit-btn").textContent = isView ? t("createField") : t("updateField");
 
   getById("field-form").querySelectorAll("input,select").forEach((node) => {
     node.disabled = isView;
@@ -108,20 +109,20 @@ function validateFieldPayload(payload) {
   const errors = [];
 
   if (!payload.name.trim()) {
-    errors.push("name: Name is required.");
+    errors.push(`name: ${t("fieldNameRequired")}`);
   }
 
   if (!payload.key.trim()) {
-    errors.push("key: Key is required.");
+    errors.push(`key: ${t("fieldKeyRequired")}`);
   }
 
   if (!payload.dataType) {
-    errors.push("dataType: Data type is required.");
+    errors.push(`dataType: ${t("dataTypeRequired")}`);
   }
 
   if (payload.dataType === "Enum") {
     if (!Array.isArray(payload.options) || !payload.options.length) {
-      errors.push("options: Enum fields require at least one option.");
+      errors.push(`options: ${t("enumOptionsRequired")}`);
     }
   }
 
@@ -148,7 +149,7 @@ export async function loadFieldDefinitions() {
     state.fieldDefinitions = Array.isArray(result) ? result : [];
     renderFieldRows();
   } catch (error) {
-    showNotification("Failed to load field definitions.", "error", loadFieldDefinitions);
+    showNotification(t("failedLoadFields"), "error", loadFieldDefinitions);
   }
 }
 
@@ -164,14 +165,14 @@ async function handleFieldSubmit(event) {
   }
 
   try {
-    setBusy("field-submit-btn", true, "Saving...");
+    setBusy("field-submit-btn", true, t("saving"));
 
     if (state.fieldMode === "edit" && state.selectedFieldId) {
       await put(`/api/v1/admin/profile-fields/${state.selectedFieldId}`, payload);
-      showNotification("Field definition updated.");
+      showNotification(t("updateField"));
     } else {
       await post("/api/v1/admin/profile-fields", payload);
-      showNotification("Field definition created.");
+      showNotification(t("createField"));
     }
 
     await loadFieldDefinitions();
@@ -181,10 +182,10 @@ async function handleFieldSubmit(event) {
     showFormErrors("field-form-errors", messages);
 
     if (error.status === 409) {
-      showNotification("Conflict while saving field definition.", "error");
+      showNotification(t("conflictSavingField"), "error");
     }
   } finally {
-    setBusy("field-submit-btn", false, "Saving...");
+    setBusy("field-submit-btn", false, t("saving"));
   }
 }
 
@@ -210,13 +211,13 @@ async function handleFieldTableClick(event) {
   }
 
   if (deleteId) {
-    if (!confirmDelete("Delete this field definition?")) {
+    if (!confirmDelete(t("deleteFieldConfirm"))) {
       return;
     }
 
     try {
       await del(`/api/v1/admin/profile-fields/${deleteId}`);
-      showNotification("Field definition deleted.");
+      showNotification(t("fieldDeleted"));
       await loadFieldDefinitions();
 
       if (state.selectedFieldId === deleteId) {

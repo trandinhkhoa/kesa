@@ -1,3 +1,5 @@
+import { t } from "./i18n.js";
+
 function getById(id) {
   return document.getElementById(id);
 }
@@ -37,7 +39,7 @@ export function showNotification(message, kind = "success", retryCallback = null
 
   if (retryCallback) {
     const retryButton = document.createElement("button");
-    retryButton.textContent = "Retry";
+    retryButton.textContent = t("retry");
     retryButton.className = "secondary";
     retryButton.addEventListener("click", retryCallback);
     banner.appendChild(retryButton);
@@ -73,18 +75,18 @@ export function mapApiErrorToMessages(error) {
   }
 
   if (error.status === 404) {
-    return ["Resource not found. It may have been removed."];
+    return [t("resourceNotFound")];
   }
 
   if (error.status === 409) {
-    return [error.message || "Request conflict. Please check duplicated key or stale data."];
+    return [error.message || t("requestConflict")];
   }
 
   if (error.status === 0) {
-    return [error.message || "Network or timeout error."];
+    return [error.message || t("networkError")];
   }
 
-  return [error.message || "Unexpected error occurred."];
+  return [error.message || t("apiRequestFailed")];
 }
 
 export function setBusy(buttonId, isBusy, busyLabel) {
@@ -118,5 +120,5 @@ export function toLocalDateTime(value) {
     return value;
   }
 
-  return date.toLocaleString();
+  return date.toLocaleString("vi-VN");
 }

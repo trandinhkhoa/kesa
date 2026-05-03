@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kesa HR UI</title>
+  <title data-i18n="appTitle">Kesa HR UI</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="app-header">
     <div>
-      <h1>Kesa HR Management</h1>
-      <p class="subtitle">Candidate + Dynamic Profile Field Management</p>
+      <h1 data-i18n="appTitle">Kesa HR Management</h1>
+      <p class="subtitle" data-i18n="appSubtitle">Candidate + Dynamic Profile Field Management</p>
     </div>
     <div class="backend-meta">
-      <span>Backend:</span>
+      <span data-i18n="backendLabel">Backend:</span>
       <code id="backend-url"></code>
     </div>
   </header>
@@ -21,8 +21,8 @@
   <div id="notification" class="notification hidden" role="status" aria-live="polite"></div>
 
   <nav class="tabs" aria-label="Main sections">
-    <button id="tab-candidates" class="tab active" data-tab="candidates">Candidates</button>
-    <button id="tab-fields" class="tab" data-tab="fields">Profile Field Definitions</button>
+    <button id="tab-candidates" class="tab active" data-tab="candidates" data-i18n="tabCandidates">Candidates</button>
+    <button id="tab-fields" class="tab" data-tab="fields" data-i18n="tabFields">Profile Field Definitions</button>
   </nav>
 
   <main>
@@ -30,37 +30,37 @@
       <div class="panel-grid">
         <article class="card">
           <div class="card-header">
-            <h2>Candidate List</h2>
-            <button id="candidate-refresh-btn" class="secondary">Refresh</button>
+            <h2 data-i18n="candidateListTitle">Candidate List</h2>
+            <button id="candidate-refresh-btn" class="secondary" data-i18n="refresh">Refresh</button>
           </div>
 
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>BirthDate</th>
-                  <th>Sex</th>
-                  <th>Updated</th>
-                  <th>Actions</th>
+                  <th data-i18n="name">Name</th>
+                  <th data-i18n="birthDate">BirthDate</th>
+                  <th data-i18n="sex">Sex</th>
+                  <th data-i18n="updated">Updated</th>
+                  <th data-i18n="actions">Actions</th>
                 </tr>
               </thead>
               <tbody id="candidate-table-body"></tbody>
             </table>
           </div>
 
-          <div id="candidate-empty" class="empty hidden">No candidates found.</div>
+          <div id="candidate-empty" class="empty hidden" data-i18n="noCandidates">No candidates found.</div>
 
           <div class="pagination">
-            <button id="candidate-prev-page" class="secondary">Prev</button>
+            <button id="candidate-prev-page" class="secondary" data-i18n="prev">Prev</button>
             <span id="candidate-page-label">Page 1</span>
-            <button id="candidate-next-page" class="secondary">Next</button>
+            <button id="candidate-next-page" class="secondary" data-i18n="next">Next</button>
           </div>
         </article>
 
         <article class="card">
           <div class="card-header">
-            <h2>Candidate Form</h2>
+            <h2 data-i18n="candidateFormTitle">Candidate Form</h2>
             <span id="candidate-mode-badge" class="badge">Create</span>
           </div>
 
@@ -68,27 +68,27 @@
             <input id="candidate-id" type="hidden" />
 
             <label>
-              Name
+              <span data-i18n="name">Name</span>
               <input id="candidate-name" name="name" type="text" maxlength="200" required />
             </label>
 
             <label>
-              Birth Date
+              <span data-i18n="birthDate">Birth Date</span>
               <input id="candidate-birth-date" name="birthDate" type="date" required />
             </label>
 
             <label>
-              Sex
+              <span data-i18n="sex">Sex</span>
               <select id="candidate-sex" name="sex" required>
-                <option value="">Select sex</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
+                <option value="" data-i18n="selectSex">Select sex</option>
+                <option value="Male" data-i18n="male">Male</option>
+                <option value="Female" data-i18n="female">Female</option>
+                <option value="Other" data-i18n="other">Other</option>
               </select>
             </label>
 
             <fieldset>
-              <legend>Custom Fields</legend>
+              <legend data-i18n="customFields">Custom Fields</legend>
               <div id="candidate-custom-fields" class="dynamic-fields"></div>
             </fieldset>
 
@@ -96,7 +96,7 @@
 
             <div class="form-actions">
               <button id="candidate-submit-btn" type="submit">Create Candidate</button>
-              <button id="candidate-cancel-btn" class="secondary" type="button">Reset</button>
+              <button id="candidate-cancel-btn" class="secondary" type="button" data-i18n="reset">Reset</button>
             </div>
           </form>
         </article>
@@ -107,32 +107,32 @@
       <div class="panel-grid">
         <article class="card">
           <div class="card-header">
-            <h2>Field Definitions</h2>
-            <button id="field-refresh-btn" class="secondary">Refresh</button>
+            <h2 data-i18n="fieldListTitle">Field Definitions</h2>
+            <button id="field-refresh-btn" class="secondary" data-i18n="refresh">Refresh</button>
           </div>
 
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Key</th>
-                  <th>Type</th>
-                  <th>Required</th>
-                  <th>Active</th>
-                  <th>Actions</th>
+                  <th data-i18n="name">Name</th>
+                  <th data-i18n="key">Key</th>
+                  <th data-i18n="type">Type</th>
+                  <th data-i18n="required">Required</th>
+                  <th data-i18n="active">Active</th>
+                  <th data-i18n="actions">Actions</th>
                 </tr>
               </thead>
               <tbody id="field-table-body"></tbody>
             </table>
           </div>
 
-          <div id="field-empty" class="empty hidden">No field definitions found.</div>
+          <div id="field-empty" class="empty hidden" data-i18n="noFields">No field definitions found.</div>
         </article>
 
         <article class="card">
           <div class="card-header">
-            <h2>Field Definition Form</h2>
+            <h2 data-i18n="fieldFormTitle">Field Definition Form</h2>
             <span id="field-mode-badge" class="badge">Create</span>
           </div>
 
@@ -140,39 +140,39 @@
             <input id="field-id" type="hidden" />
 
             <label>
-              Name
+              <span data-i18n="name">Name</span>
               <input id="field-name" name="name" type="text" maxlength="128" required />
             </label>
 
             <label>
-              Key
+              <span data-i18n="key">Key</span>
               <input id="field-key" name="key" type="text" maxlength="128" required />
             </label>
 
             <label>
-              Data Type
+              <span data-i18n="type">Data Type</span>
               <select id="field-data-type" name="dataType" required>
-                <option value="">Select type</option>
-                <option value="String">String</option>
-                <option value="Number">Number</option>
-                <option value="Date">Date</option>
-                <option value="Boolean">Boolean</option>
-                <option value="Enum">Enum</option>
+                <option value="" data-i18n="selectType">Select type</option>
+                <option value="String" data-i18n="string">String</option>
+                <option value="Number" data-i18n="number">Number</option>
+                <option value="Date" data-i18n="date">Date</option>
+                <option value="Boolean" data-i18n="boolean">Boolean</option>
+                <option value="Enum" data-i18n="enum">Enum</option>
               </select>
             </label>
 
             <label class="inline-label">
               <input id="field-is-required" name="isRequired" type="checkbox" />
-              Required
+              <span data-i18n="required">Required</span>
             </label>
 
             <label class="inline-label">
               <input id="field-is-active" name="isActive" type="checkbox" checked />
-              Active
+              <span data-i18n="active">Active</span>
             </label>
 
             <label id="field-options-wrapper" class="hidden">
-              Enum Options (comma separated)
+              <span data-i18n="enumOptionsLabel">Enum Options (comma separated)</span>
               <input id="field-options" name="options" type="text" placeholder="junior,mid,senior" />
             </label>
 
@@ -180,7 +180,7 @@
 
             <div class="form-actions">
               <button id="field-submit-btn" type="submit">Create Field</button>
-              <button id="field-cancel-btn" class="secondary" type="button">Reset</button>
+              <button id="field-cancel-btn" class="secondary" type="button" data-i18n="reset">Reset</button>
             </div>
           </form>
         </article>

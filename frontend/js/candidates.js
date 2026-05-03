@@ -1,5 +1,6 @@
 import { del, get, post, put } from "./api.js";
 import { state } from "./state.js";
+import { t } from "./i18n.js";
 import {
   clearFormErrors,
   confirmDelete,
@@ -60,7 +61,7 @@ function buildCustomFieldControl(definition, value) {
       input = document.createElement("select");
       const defaultOption = document.createElement("option");
       defaultOption.value = "";
-      defaultOption.textContent = "Select option";
+      defaultOption.textContent = t("selectOption");
       input.appendChild(defaultOption);
 
       (definition.options || []).forEach((option) => {
@@ -111,9 +112,9 @@ function renderCandidateRows() {
         <td>${toLocalDateTime(item.updatedAt)}</td>
         <td>
           <div class="row-actions">
-            <button class="secondary" data-candidate-view="${item.id}">View</button>
-            <button class="secondary" data-candidate-edit="${item.id}">Edit</button>
-            <button class="danger" data-candidate-delete="${item.id}">Delete</button>
+            <button class="secondary" data-candidate-view="${item.id}">${t("view")}</button>
+            <button class="secondary" data-candidate-edit="${item.id}">${t("edit")}</button>
+            <button class="danger" data-candidate-delete="${item.id}">${t("deleteAction")}</button>
           </div>
         </td>
       </tr>
@@ -126,7 +127,7 @@ function renderCandidateRows() {
   const pageSize = state.candidatePaging.pageSize;
   const totalPages = Math.max(1, Math.ceil(totalCount / pageSize));
 
-  getById("candidate-page-label").textContent = `Page ${currentPage} / ${totalPages} (Total ${totalCount})`;
+  getById("candidate-page-label").textContent = t("pageLabel", currentPage, totalPages, totalCount);
   getById("candidate-prev-page").disabled = currentPage <= 1;
   getById("candidate-next-page").disabled = currentPage >= totalPages;
 }
@@ -138,14 +139,14 @@ function setCandidateMode(mode) {
   const submitButton = getById("candidate-submit-btn");
 
   if (mode === "edit") {
-    modeBadge.textContent = "Edit";
-    submitButton.textContent = "Update Candidate";
+    modeBadge.textContent = t("modeEdit");
+    submitButton.textContent = t("updateCandidate");
   } else if (mode === "view") {
-    modeBadge.textContent = "Read";
-    submitButton.textContent = "Create Candidate";
+    modeBadge.textContent = t("modeRead");
+    submitButton.textContent = t("createCandidate");
   } else {
-    modeBadge.textContent = "Create";
-    submitButton.textContent = "Create Candidate";
+    modeBadge.textContent = t("modeCreate");
+    submitButton.textContent = t("createCandidate");
   }
 
   const isReadonly = mode === "view";
@@ -214,11 +215,11 @@ function serializeDynamicFields() {
     if (required) {
       if (type === "Boolean") {
         if (!value) {
-          errors.push(`${key}: This field is required.`);
+          errors.push(`${key}: ${t("fieldRequired")}`);
           return;
         }
       } else if (value === "" || value === null || value === undefined) {
-        errors.push(`${key}: This field is required.`);
+        errors.push(`${key}: ${t("fieldRequired")}`);
         return;
       }
     }
@@ -230,7 +231,7 @@ function serializeDynamicFields() {
     if (type === "Number") {
       const numeric = Number(value);
       if (!Number.isFinite(numeric)) {
-        errors.push(`${key}: Must be a valid number.`);
+        errors.push(`${key}: ${t("mustBeValidNumber")}`);
         return;
       }
       payload[key] = numeric;
@@ -252,15 +253,15 @@ function validateCoreCandidatePayload(payload) {
   const errors = [];
 
   if (!payload.name.trim()) {
-    errors.push("name: Name is required.");
+    errors.push(`name: ${t("nameRequired")}`);
   }
 
   if (!payload.birthDate) {
-    errors.push("birthDate: Birth date is required.");
+    errors.push(`birthDate: ${t("birthDateRequired")}`);
   }
 
   if (!payload.sex) {
-    errors.push("sex: Sex is required.");
+    errors.push(`sex: ${t("sexRequired")}`);
   }
 
   return errors;
@@ -292,7 +293,7 @@ export async function loadCandidates() {
     state.candidatePaging.pageSize = result.pageSize || pageSize;
     renderCandidateRows();
   } catch (error) {
-    showNotification("Failed to load candidates.", "error", loadCandidates);
+    showNotification(t("failedLoadCandidates"), "error", loadCandidates);
   }
 }
 
@@ -300,7 +301,7 @@ async function openCandidate(id, mode) {
   try {
     const item = await get(`/api/v1/candidates/${id}`);
     fillCandidateForm(item, mode);
-    showNotification(mode === "view" ? "Candidate loaded in read mode." : "Candidate loaded for edit.");
+    showNotification(mode === "view" ? t("candidateLoadedRead") : t("candidateLoadedEdit"));
   } catch (error) {
     const messages = mapApiErrorToMessages(error);
     showNotification(messages[0], "error", loadCandidates);
@@ -328,13 +329,13 @@ async function handleCandidateTableClick(event) {
   }
 
   if (deleteId) {
-    if (!confirmDelete("Delete this candidate profile?")) {
+    if (!confirmDelete(t("deleteCandidateConfirm"))) {
       return;
     }
 
     try {
       await del(`/api/v1/candidates/${deleteId}`);
-      showNotification("Candidate deleted.");
+      showNotification(t("candidateDeleted"));
       await loadCandidates();
 
       if (state.selectedCandidateId === deleteId) {
@@ -360,14 +361,14 @@ async function handleCandidateSubmit(event) {
   }
 
   try {
-    setBusy("candidate-submit-btn", true, "Saving...");
+    setBusy("candidate-submit-btn", true, t("saving"));
 
     if (state.candidateMode === "edit" && state.selectedCandidateId) {
       await put(`/api/v1/candidates/${state.selectedCandidateId}`, payload);
-      showNotification("Candidate updated.");
+      showNotification(t("candidateUpdated"));
     } else {
       await post("/api/v1/candidates", payload);
-      showNotification("Candidate created.");
+      showNotification(t("candidateCreated"));
     }
 
     await loadCandidates();
@@ -377,22 +378,22 @@ async function handleCandidateSubmit(event) {
     showFormErrors("candidate-form-errors", messages);
 
     if (error.status === 404) {
-      showNotification("Candidate no longer exists.", "error", loadCandidates);
+      showNotification(t("candidateNotFound"), "error", loadCandidates);
       await loadCandidates();
       resetCandidateForm();
       return;
     }
 
     if (error.status === 409) {
-      showNotification("Conflict while saving candidate.", "error");
+      showNotification(t("conflictSavingCandidate"), "error");
       return;
     }
 
     if (error.status >= 500 || error.status === 0) {
-      showNotification("Server or network error while saving candidate.", "error", () => handleCandidateSubmit(event));
+      showNotification(t("serverErrorSavingCandidate"), "error", () => handleCandidateSubmit(event));
     }
   } finally {
-    setBusy("candidate-submit-btn", false, "Saving...");
+    setBusy("candidate-submit-btn", false, t("saving"));
   }
 }
 

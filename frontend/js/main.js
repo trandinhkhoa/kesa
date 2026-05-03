@@ -3,6 +3,7 @@ import { state } from "./state.js";
 import { initializeCandidateModule, loadCandidates, rerenderCandidateCustomFieldsPreservingValues } from "./candidates.js";
 import { initializeFieldModule, loadFieldDefinitions } from "./fields.js";
 import { setBackendUrl, showNotification, switchTab } from "./ui.js";
+import { i18nInit, t } from "./i18n.js";
 
 function getById(id) {
   return document.getElementById(id);
@@ -20,6 +21,7 @@ function initializeTabs() {
 }
 
 async function bootstrap() {
+  i18nInit();
   setBackendUrl(config.apiBaseUrl);
   initializeTabs();
   initializeFieldModule();
@@ -30,7 +32,7 @@ async function bootstrap() {
     rerenderCandidateCustomFieldsPreservingValues();
     await loadCandidates();
   } catch {
-    showNotification("Initialization completed with recoverable API errors.", "error");
+    showNotification(t("initApiErrors"), "error");
   }
 }
 

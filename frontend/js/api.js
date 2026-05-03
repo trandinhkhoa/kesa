@@ -1,4 +1,5 @@
 import { config } from "./config.js";
+import { t } from "./i18n.js";
 
 const defaultHeaders = {
   "Content-Type": "application/json"
@@ -52,7 +53,7 @@ async function request(method, path, body) {
     const payload = await parseBody(response);
 
     if (!response.ok) {
-      const error = new Error(payload?.detail || payload?.title || "API request failed");
+      const error = new Error(payload?.detail || payload?.title || t("apiRequestFailed"));
       error.status = response.status;
       error.code = payload?.errorCode || payload?.extensions?.errorCode || null;
       error.payload = payload;
@@ -63,7 +64,7 @@ async function request(method, path, body) {
     return payload;
   } catch (error) {
     if (error.name === "AbortError") {
-      const timeoutError = new Error("Request timed out. Please try again.");
+      const timeoutError = new Error(t("networkTimeout"));
       timeoutError.status = 0;
       timeoutError.code = "NETWORK_TIMEOUT";
       timeoutError.validationErrors = {};
@@ -71,7 +72,7 @@ async function request(method, path, body) {
     }
 
     if (error.status === undefined) {
-      const networkError = new Error("Network error. Please verify backend is running.");
+      const networkError = new Error(t("networkError"));
       networkError.status = 0;
       networkError.code = "NETWORK_ERROR";
       networkError.validationErrors = {};
