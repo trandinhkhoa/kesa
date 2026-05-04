@@ -24,7 +24,7 @@ builder.Services.AddDbContext<KesaDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddScoped<IProfileFieldDefinitionRepository, ProfileFieldDefinitionRepository>();
+builder.Services.AddScoped<IDefaultFieldsRepository, DefaultFieldsRepository>();
 builder.Services.AddScoped<ICandidateProfileRepository, CandidateProfileRepository>();
 builder.Services.AddScoped<IProfileFieldDefinitionService, ProfileFieldDefinitionService>();
 builder.Services.AddScoped<ICandidateProfileService, CandidateProfileService>();

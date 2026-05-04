@@ -5,7 +5,7 @@ using Xunit;
 namespace Kesa.Tests;
 
 /// <summary>
-/// Integration tests for <see cref="ProfileFieldDefinitionRepository"/> using PostgreSQL testcontainers.
+/// Integration tests for <see cref="DefaultFieldsRepository"/> using PostgreSQL testcontainers.
 /// </summary>
 [Collection(PostgreSqlCollection.Name)]
 public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFixture fixture)
@@ -17,7 +17,7 @@ public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFix
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
 
         var entity = new DefaultFields
         {
@@ -48,7 +48,7 @@ public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFix
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
 
         var updated = await repository.UpdateAsync(new DefaultFields
         {
@@ -72,7 +72,7 @@ public sealed class ProfileFieldDefinitionRepositoryTests(PostgreSqlContainerFix
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
 
         var created = await repository.CreateAsync(new DefaultFields
         {

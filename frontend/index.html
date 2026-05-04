@@ -31,7 +31,12 @@
         <article class="card">
           <div class="card-header">
             <h2 data-i18n="candidateListTitle">Candidate List</h2>
-            <button id="candidate-refresh-btn" class="secondary" data-i18n="refresh">Refresh</button>
+            <button id="candidate-refresh-btn" class="secondary icon-btn" title="Refresh" aria-label="Refresh">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+            </button>
           </div>
 
           <div class="table-wrap">
@@ -90,6 +95,11 @@
             <fieldset>
               <legend data-i18n="customFields">Custom Fields</legend>
               <div id="candidate-custom-fields" class="dynamic-fields"></div>
+              <div id="candidate-add-custom-field" class="add-field-row">
+                <input id="new-custom-field-name" type="text" placeholder="Tên trường" />
+                <input id="new-custom-field-value" type="text" placeholder="Giá trị" />
+                <button type="button" id="add-custom-field-btn" class="success">+</button>
+              </div>
             </fieldset>
 
             <div id="candidate-form-errors" class="form-errors hidden"></div>
@@ -108,7 +118,12 @@
         <article class="card">
           <div class="card-header">
             <h2 data-i18n="fieldListTitle">Field Definitions</h2>
-            <button id="field-refresh-btn" class="secondary" data-i18n="refresh">Refresh</button>
+            <button id="field-refresh-btn" class="secondary icon-btn" title="Refresh" aria-label="Refresh">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+            </button>
           </div>
 
           <div class="table-wrap">

@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="440e0b5b-b531-41de-a3bb-fbf81f8e46fa" name="@MacBookPro 2026-05-04 00:59:19" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-05-04T00:59:19.4493590+07:00" queuing="2026-05-04T00:59:19.4493590+07:00" start="2026-05-04T00:59:17.6188140+07:00" finish="2026-05-04T00:59:21.5035430+07:00" />
+  <TestSettings name="default" id="ee23250d-9818-4aa3-b605-da07bb601606">
+    <Deployment runDeploymentRoot="_MacBookPro_2026-05-04_00_59_19" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="aa93c221-f0bb-475f-9303-948c41203580" testId="a0109f87-3eea-eecf-d15e-a2341c1adc18" testName="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectInvalidDynamicFieldDataType" computerName="MacBookPro" duration="00:00:00.0006622" startTime="2026-05-04T00:59:21.2247280+07:00" endTime="2026-05-04T00:59:21.2247670+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa93c221-f0bb-475f-9303-948c41203580">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectInvalidDynamicFieldDataType() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 136
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="10ace454-9187-4289-9b1b-dc7078ad7626" testId="21ca1ac1-9063-0879-9bd1-7a61525faa3a" testName="Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnValidationErrorForUnsupportedDataType" computerName="MacBookPro" duration="00:00:00.0008306" startTime="2026-05-04T00:59:21.2202940+07:00" endTime="2026-05-04T00:59:21.2203320+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10ace454-9187-4289-9b1b-dc7078ad7626">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnValidationErrorForUnsupportedDataType() in /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionServiceTests.cs:line 17
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eeea2c61-b170-4b38-878f-d3e9e4ceb0c1" testId="7a75f4a5-acb4-8155-9d50-43cc27f4cb35" testName="Kesa.Tests.ApiCrudIntegrationTests.CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders" computerName="MacBookPro" duration="00:00:00.0015379" startTime="2026-05-04T00:59:21.2324590+07:00" endTime="2026-05-04T00:59:21.2339860+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eeea2c61-b170-4b38-878f-d3e9e4ceb0c1">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ApiCrudIntegrationTests.CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders() in /Users/ktran/kesa/Kesa/Kesa.Tests/ApiCrudIntegrationTests.cs:line 133
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="73c5c6f2-d6dc-405e-8365-364cdc5f3112" testId="a4f2a0c0-90dd-72d5-2721-a34f875eee16" testName="Kesa.Tests.ProfileFieldDefinitionRepositoryTests.UpdateAsync_ShouldReturnNullForMissingEntity" computerName="MacBookPro" duration="00:00:00.0005721" startTime="2026-05-04T00:59:21.2210280+07:00" endTime="2026-05-04T00:59:21.2210670+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="73c5c6f2-d6dc-405e-8365-364cdc5f3112">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ProfileFieldDefinitionRepositoryTests.UpdateAsync_ShouldReturnNullForMissingEntity() in /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionRepositoryTests.cs:line 47
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e0de93ca-f668-4322-8ab9-f9619768a24b" testId="22c0dda0-7276-204b-a271-c3df90358da1" testName="Kesa.Tests.ApiCrudIntegrationTests.CandidateAndAdminWorkflow_ShouldSucceedEndToEnd" computerName="MacBookPro" duration="00:00:00.0011013" startTime="2026-05-04T00:59:21.2359030+07:00" endTime="2026-05-04T00:59:21.2368530+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0de93ca-f668-4322-8ab9-f9619768a24b">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ApiCrudIntegrationTests.CandidateAndAdminWorkflow_ShouldSucceedEndToEnd() in /Users/ktran/kesa/Kesa/Kesa.Tests/ApiCrudIntegrationTests.cs:line 73
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="669a0ab0-8471-4892-8473-cdd93973b9d1" testId="ce8f0e27-79f1-e875-e18d-ebc41d3fcb6f" testName="Kesa.Tests.ProfileFieldDefinitionRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReportMissingRows" computerName="MacBookPro" duration="00:00:00.0005896" startTime="2026-05-04T00:59:21.2214050+07:00" endTime="2026-05-04T00:59:21.2214430+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="669a0ab0-8471-4892-8473-cdd93973b9d1">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ProfileFieldDefinitionRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReportMissingRows() in /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionRepositoryTests.cs:line 71
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8f3f60df-dc5d-406e-b5a5-3010176e8efa" testId="6c6ac8b8-cd4c-bf86-180b-372c9f7c06f8" testName="Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldReturnItemsAndTotalCountWithOffsetPagination" computerName="MacBookPro" duration="00:00:00.0007509" startTime="2026-05-04T00:59:21.2309900+07:00" endTime="2026-05-04T00:59:21.2315270+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f3f60df-dc5d-406e-b5a5-3010176e8efa">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldReturnItemsAndTotalCountWithOffsetPagination() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs:line 60
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b925fa12-455a-4bff-ab78-dc90725c834e" testId="3f18ad0e-0df7-6d67-1d00-5ea6609fb91f" testName="Kesa.Tests.ApiCrudIntegrationTests.AdminProfileFieldsCrudWorkflow_ShouldSucceed" computerName="MacBookPro" duration="00:00:00.0013808" startTime="2026-05-04T00:59:21.2343180+07:00" endTime="2026-05-04T00:59:21.2355590+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b925fa12-455a-4bff-ab78-dc90725c834e">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ApiCrudIntegrationTests.AdminProfileFieldsCrudWorkflow_ShouldSucceed() in /Users/ktran/kesa/Kesa/Kesa.Tests/ApiCrudIntegrationTests.cs:line 28
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="39097d16-7c3c-4174-87f3-cd210dcf3d39" testId="11945ff8-70e3-d50b-5d5a-b1a623536256" testName="Kesa.Tests.CandidatesControllerTests.ListAsync_ShouldClampPageSizeAtMaximum" computerName="MacBookPro" duration="00:00:00.0062516" startTime="2026-05-04T00:59:18.0178110+07:00" endTime="2026-05-04T00:59:18.0272040+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39097d16-7c3c-4174-87f3-cd210dcf3d39" />
+    <UnitTestResult executionId="e3f9993e-bd3f-4c95-b8d0-80f5302c21f6" testId="3dfd64bb-2c8c-2d43-b5c6-fde4e7775c12" testName="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldReturnValidationErrorsForMissingCoreColumns" computerName="MacBookPro" duration="00:00:00.0006428" startTime="2026-05-04T00:59:21.2277160+07:00" endTime="2026-05-04T00:59:21.2282470+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3f9993e-bd3f-4c95-b8d0-80f5302c21f6">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldReturnValidationErrorsForMissingCoreColumns() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 18
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2278d30d-18ab-43c6-8474-c5f583d92c15" testId="4a4e1ae9-cef7-0b42-9d97-8c5e83ac065f" testName="Kesa.Tests.CandidateProfileServiceTests.GetByIdAsync_ShouldDeriveAgeCorrectlyBeforeBirthday" computerName="MacBookPro" duration="00:00:00.0005634" startTime="2026-05-04T00:59:21.2269540+07:00" endTime="2026-05-04T00:59:21.2274930+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2278d30d-18ab-43c6-8474-c5f583d92c15">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.GetByIdAsync_ShouldDeriveAgeCorrectlyBeforeBirthday() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 223
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="28e7f7dd-02e4-4ed9-a47b-3ced7ddbc403" testId="d95816a7-e721-fe90-cc4b-5d308e39ecec" testName="Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnConflictWhenKeyAlreadyExists" computerName="MacBookPro" duration="00:00:00.0007538" startTime="2026-05-04T00:59:21.2199960+07:00" endTime="2026-05-04T00:59:21.2200420+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="28e7f7dd-02e4-4ed9-a47b-3ced7ddbc403">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnConflictWhenKeyAlreadyExists() in /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionServiceTests.cs:line 41
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="77bc166d-3cf8-4ef7-b06c-180ca0b9ed2e" testId="303e243f-ec96-de77-aa6a-a8e444f10e10" testName="Kesa.Tests.CandidateProfileRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReturnFalseWhenMissing" computerName="MacBookPro" duration="00:00:00.0005954" startTime="2026-05-04T00:59:21.2317900+07:00" endTime="2026-05-04T00:59:21.2322160+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="77bc166d-3cf8-4ef7-b06c-180ca0b9ed2e">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReturnFalseWhenMissing() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs:line 89
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="889bc0d0-2a93-46b1-b650-ca5d112bf9d3" testId="c080ecbb-6ba4-20ab-0d17-25dc5441121a" testName="Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldThrowForInvalidPaginationInputs" computerName="MacBookPro" duration="00:00:00.0005415" startTime="2026-05-04T00:59:21.2291150+07:00" endTime="2026-05-04T00:59:21.2296390+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="889bc0d0-2a93-46b1-b650-ca5d112bf9d3">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldThrowForInvalidPaginationInputs() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs:line 118
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0fcc66cb-953e-4590-9f24-b5b5c5cb9dcb" testId="a5d2e157-5dfa-bef8-edb7-55edb94940e1" testName="Kesa.Tests.AdminProfileFieldsControllerTests.GetByIdAsync_ShouldReturnNotFoundProblemWhenServiceReturnsNotFound" computerName="MacBookPro" duration="00:00:00.0014172" startTime="2026-05-04T00:59:18.0329970+07:00" endTime="2026-05-04T00:59:18.0332430+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0fcc66cb-953e-4590-9f24-b5b5c5cb9dcb" />
+    <UnitTestResult executionId="1b609230-60c2-456a-85ba-c395944b9dce" testId="918253f5-b514-c0f0-4ee8-f001528cd9ea" testName="Kesa.Tests.PostgreSqlInfrastructureTests.ShouldProvideConnectionStringAndApplyMigrationsAsync" computerName="MacBookPro" duration="00:00:00.0006391" startTime="2026-05-04T00:59:21.2120670+07:00" endTime="2026-05-04T00:59:21.2167020+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1b609230-60c2-456a-85ba-c395944b9dce">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.PostgreSqlInfrastructureTests.ShouldProvideConnectionStringAndApplyMigrationsAsync() in /Users/ktran/kesa/Kesa/Kesa.Tests/UnitTest1.cs:line 82
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="23a199fc-b7c9-4779-8ea0-bf9d716c5d80" testId="aa9fa24b-4181-7264-318b-f49aee30639e" testName="Kesa.Tests.CandidateProfileRepositoryTests.CreateGetAndUpdateAsync_ShouldPersistCoreAndCustomFields" computerName="MacBookPro" duration="00:00:00.0008200" startTime="2026-05-04T00:59:21.2305670+07:00" endTime="2026-05-04T00:59:21.2306180+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="23a199fc-b7c9-4779-8ea0-bf9d716c5d80">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileRepositoryTests.CreateGetAndUpdateAsync_ShouldPersistCoreAndCustomFields() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs:line 17
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5b54b97a-1d16-4b91-92a1-f9fb8554c8c9" testId="47437ae9-be49-9a5d-cd7d-50ded4aa9ece" testName="Kesa.Tests.ModelAndRepositoryIntegrationTests.ProfileFieldDefinition_KeyShouldBeUniqueAtDatabaseLevel" computerName="MacBookPro" duration="00:00:00.0005773" startTime="2026-05-04T00:59:21.2231370+07:00" endTime="2026-05-04T00:59:21.2234980+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b54b97a-1d16-4b91-92a1-f9fb8554c8c9">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ModelAndRepositoryIntegrationTests.ProfileFieldDefinition_KeyShouldBeUniqueAtDatabaseLevel() in /Users/ktran/kesa/Kesa/Kesa.Tests/ModelAndRepositoryIntegrationTests.cs:line 18
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="de2024cb-bada-4cea-bb2f-f9d0312fcb37" testId="2751b551-94d4-7143-02e7-d1dfb6581c7c" testName="Kesa.Tests.ProfileFieldDefinitionServiceTests.DeleteAsync_ShouldReturnNotFoundForMissingDefinition" computerName="MacBookPro" duration="00:00:00.0004988" startTime="2026-05-04T00:59:21.2193680+07:00" endTime="2026-05-04T00:59:21.2194330+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de2024cb-bada-4cea-bb2f-f9d0312fcb37">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ProfileFieldDefinitionServiceTests.DeleteAsync_ShouldReturnNotFoundForMissingDefinition() in /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionServiceTests.cs:line 76
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="23ad3eb7-bdbd-4320-9d5f-c601c5ceebf1" testId="899b84e6-8c25-55ae-3ba2-3333f208834b" testName="Kesa.Tests.AdminProfileFieldsControllerTests.CreateAsync_ShouldReturnCreatedAtRouteWhenServiceSucceeds" computerName="MacBookPro" duration="00:00:00.0062887" startTime="2026-05-04T00:59:18.0170330+07:00" endTime="2026-05-04T00:59:18.0292100+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="23ad3eb7-bdbd-4320-9d5f-c601c5ceebf1" />
+    <UnitTestResult executionId="3a691ed3-a796-4927-b52d-75f4b10f92cc" testId="00eac515-1ef5-daab-bda6-39c5fb0edc21" testName="Kesa.Tests.ModelAndRepositoryIntegrationTests.CandidateProfile_ForeignKeysShouldSetNullWhenUserIsDeleted" computerName="MacBookPro" duration="00:00:00.0012615" startTime="2026-05-04T00:59:21.2216830+07:00" endTime="2026-05-04T00:59:21.2228370+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a691ed3-a796-4927-b52d-75f4b10f92cc">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ModelAndRepositoryIntegrationTests.CandidateProfile_ForeignKeysShouldSetNullWhenUserIsDeleted() in /Users/ktran/kesa/Kesa/Kesa.Tests/ModelAndRepositoryIntegrationTests.cs:line 52
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e3149919-4b48-4277-b3f6-05296b6965da" testId="3fc6bc04-6be1-5d48-5970-ff341405ae21" testName="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectEnumValueOutsideAllowedOptions" computerName="MacBookPro" duration="00:00:00.0005916" startTime="2026-05-04T00:59:21.2254660+07:00" endTime="2026-05-04T00:59:21.2257960+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3149919-4b48-4277-b3f6-05296b6965da">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectEnumValueOutsideAllowedOptions() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 179
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="422836e8-6fe2-4cae-8d9f-c69ee7b9ff7f" testId="f77b9ee5-edeb-be24-1586-86be7643bbb4" testName="Kesa.Tests.CandidatesControllerTests.CreateAsync_ShouldReturnValidationProblemWhenServiceFailsValidation" computerName="MacBookPro" duration="00:00:00.0018641" startTime="2026-05-04T00:59:18.0332190+07:00" endTime="2026-05-04T00:59:18.0335700+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="422836e8-6fe2-4cae-8d9f-c69ee7b9ff7f" />
+    <UnitTestResult executionId="a31294a3-28ab-4c1b-a35a-224dc841b50b" testId="d9389c56-b4b1-ab8e-9dc3-463753d9f3a1" testName="Kesa.Tests.CandidateProfileServiceTests.ListAsync_ShouldMapInvalidPaginationToValidationError" computerName="MacBookPro" duration="00:00:00.0003762" startTime="2026-05-04T00:59:21.2265140+07:00" endTime="2026-05-04T00:59:21.2267380+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a31294a3-28ab-4c1b-a35a-224dc841b50b">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.ListAsync_ShouldMapInvalidPaginationToValidationError() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 257
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ebc99a13-b0d9-4687-99e3-603639005e55" testId="b03cdb79-6507-15b5-81d9-d6752239098f" testName="Kesa.Tests.CandidateProfileServiceTests.DeleteAsync_ShouldReturnNotFoundWhenCandidateMissing" computerName="MacBookPro" duration="00:00:00.0003704" startTime="2026-05-04T00:59:21.2260250+07:00" endTime="2026-05-04T00:59:21.2262640+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ebc99a13-b0d9-4687-99e3-603639005e55">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.DeleteAsync_ShouldReturnNotFoundWhenCandidateMissing() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 279
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ef26b162-7566-49fe-b99b-31cf016cc5a7" testId="1acab5e6-9835-cd8a-dfdd-89d6d7282329" testName="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldAllowAdHocCustomFieldKeys" computerName="MacBookPro" duration="00:00:00.0005599" startTime="2026-05-04T00:59:21.2284530+07:00" endTime="2026-05-04T00:59:21.2288930+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef26b162-7566-49fe-b99b-31cf016cc5a7">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldAllowAdHocCustomFieldKeys() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 50
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e827fa24-444a-4b52-9964-55a634597267" testId="a96a702b-a434-2fb2-b9a4-37231dcf3e3e" testName="Kesa.Tests.CandidatesControllerTests.ListAsync_ShouldApplyDefaultPaginationAndReturnOk" computerName="MacBookPro" duration="00:00:00.0004674" startTime="2026-05-04T00:59:18.0329380+07:00" endTime="2026-05-04T00:59:18.0330250+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e827fa24-444a-4b52-9964-55a634597267" />
+    <UnitTestResult executionId="396d600f-3092-4cdc-a98d-abbd5fac3fa9" testId="abe5509d-6ac3-b176-b509-10c387a2a40f" testName="Kesa.Tests.ProfileFieldDefinitionRepositoryTests.CreateAndGetByIdAsync_ShouldPersistAndReturnEntity" computerName="MacBookPro" duration="00:00:00.0005720" startTime="2026-05-04T00:59:21.2205810+07:00" endTime="2026-05-04T00:59:21.2206550+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="396d600f-3092-4cdc-a98d-abbd5fac3fa9">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.ProfileFieldDefinitionRepositoryTests.CreateAndGetByIdAsync_ShouldPersistAndReturnEntity() in /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionRepositoryTests.cs:line 16
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9d89b426-e30c-411a-a8b3-8286e6644f31" testId="dc878fbc-378e-0aff-aad2-e09870d44ca3" testName="Kesa.Tests.CandidateProfileServiceTests.CreateAndGetAsync_ShouldEnforceRequiredFieldsAndDeriveAge" computerName="MacBookPro" duration="00:00:00.0006689" startTime="2026-05-04T00:59:21.2249930+07:00" endTime="2026-05-04T00:59:21.2251340+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9d89b426-e30c-411a-a8b3-8286e6644f31">
+      <Output>
+        <ErrorInfo>
+          <Message>Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.</Message>
+          <StackTrace>   at Kesa.Tests.CandidateProfileServiceTests.CreateAndGetAsync_ShouldEnforceRequiredFieldsAndDeriveAge() in /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs:line 86
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.CreateAndGetAsync_ShouldEnforceRequiredFieldsAndDeriveAge" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="dc878fbc-378e-0aff-aad2-e09870d44ca3">
+      <Execution id="9d89b426-e30c-411a-a8b3-8286e6644f31" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="CreateAndGetAsync_ShouldEnforceRequiredFieldsAndDeriveAge" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.DeleteAsync_ShouldReturnNotFoundWhenCandidateMissing" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="b03cdb79-6507-15b5-81d9-d6752239098f">
+      <Execution id="ebc99a13-b0d9-4687-99e3-603639005e55" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="DeleteAsync_ShouldReturnNotFoundWhenCandidateMissing" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileRepositoryTests.CreateGetAndUpdateAsync_ShouldPersistCoreAndCustomFields" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="aa9fa24b-4181-7264-318b-f49aee30639e">
+      <Execution id="23a199fc-b7c9-4779-8ea0-bf9d716c5d80" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileRepositoryTests" name="CreateGetAndUpdateAsync_ShouldPersistCoreAndCustomFields" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidatesControllerTests.ListAsync_ShouldClampPageSizeAtMaximum" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="11945ff8-70e3-d50b-5d5a-b1a623536256">
+      <Execution id="39097d16-7c3c-4174-87f3-cd210dcf3d39" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidatesControllerTests" name="ListAsync_ShouldClampPageSizeAtMaximum" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ProfileFieldDefinitionServiceTests.DeleteAsync_ShouldReturnNotFoundForMissingDefinition" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="2751b551-94d4-7143-02e7-d1dfb6581c7c">
+      <Execution id="de2024cb-bada-4cea-bb2f-f9d0312fcb37" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ProfileFieldDefinitionServiceTests" name="DeleteAsync_ShouldReturnNotFoundForMissingDefinition" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ApiCrudIntegrationTests.CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="7a75f4a5-acb4-8155-9d50-43cc27f4cb35">
+      <Execution id="eeea2c61-b170-4b38-878f-d3e9e4ceb0c1" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ApiCrudIntegrationTests" name="CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.AdminProfileFieldsControllerTests.CreateAsync_ShouldReturnCreatedAtRouteWhenServiceSucceeds" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="899b84e6-8c25-55ae-3ba2-3333f208834b">
+      <Execution id="23ad3eb7-bdbd-4320-9d5f-c601c5ceebf1" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.AdminProfileFieldsControllerTests" name="CreateAsync_ShouldReturnCreatedAtRouteWhenServiceSucceeds" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.AdminProfileFieldsControllerTests.GetByIdAsync_ShouldReturnNotFoundProblemWhenServiceReturnsNotFound" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="a5d2e157-5dfa-bef8-edb7-55edb94940e1">
+      <Execution id="0fcc66cb-953e-4590-9f24-b5b5c5cb9dcb" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.AdminProfileFieldsControllerTests" name="GetByIdAsync_ShouldReturnNotFoundProblemWhenServiceReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectEnumValueOutsideAllowedOptions" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="3fc6bc04-6be1-5d48-5970-ff341405ae21">
+      <Execution id="e3149919-4b48-4277-b3f6-05296b6965da" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="CreateAsync_ShouldRejectEnumValueOutsideAllowedOptions" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ModelAndRepositoryIntegrationTests.CandidateProfile_ForeignKeysShouldSetNullWhenUserIsDeleted" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="00eac515-1ef5-daab-bda6-39c5fb0edc21">
+      <Execution id="3a691ed3-a796-4927-b52d-75f4b10f92cc" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ModelAndRepositoryIntegrationTests" name="CandidateProfile_ForeignKeysShouldSetNullWhenUserIsDeleted" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnValidationErrorForUnsupportedDataType" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="21ca1ac1-9063-0879-9bd1-7a61525faa3a">
+      <Execution id="10ace454-9187-4289-9b1b-dc7078ad7626" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ProfileFieldDefinitionServiceTests" name="CreateAsync_ShouldReturnValidationErrorForUnsupportedDataType" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.GetByIdAsync_ShouldDeriveAgeCorrectlyBeforeBirthday" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="4a4e1ae9-cef7-0b42-9d97-8c5e83ac065f">
+      <Execution id="2278d30d-18ab-43c6-8474-c5f583d92c15" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="GetByIdAsync_ShouldDeriveAgeCorrectlyBeforeBirthday" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.ListAsync_ShouldMapInvalidPaginationToValidationError" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="d9389c56-b4b1-ab8e-9dc3-463753d9f3a1">
+      <Execution id="a31294a3-28ab-4c1b-a35a-224dc841b50b" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="ListAsync_ShouldMapInvalidPaginationToValidationError" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidatesControllerTests.ListAsync_ShouldApplyDefaultPaginationAndReturnOk" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="a96a702b-a434-2fb2-b9a4-37231dcf3e3e">
+      <Execution id="e827fa24-444a-4b52-9964-55a634597267" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidatesControllerTests" name="ListAsync_ShouldApplyDefaultPaginationAndReturnOk" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReturnFalseWhenMissing" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="303e243f-ec96-de77-aa6a-a8e444f10e10">
+      <Execution id="77bc166d-3cf8-4ef7-b06c-180ca0b9ed2e" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileRepositoryTests" name="DeleteAsync_ShouldUseHardDeleteAndReturnFalseWhenMissing" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldAllowAdHocCustomFieldKeys" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="1acab5e6-9835-cd8a-dfdd-89d6d7282329">
+      <Execution id="ef26b162-7566-49fe-b99b-31cf016cc5a7" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="CreateAsync_ShouldAllowAdHocCustomFieldKeys" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldThrowForInvalidPaginationInputs" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="c080ecbb-6ba4-20ab-0d17-25dc5441121a">
+      <Execution id="889bc0d0-2a93-46b1-b650-ca5d112bf9d3" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileRepositoryTests" name="ListAsync_ShouldThrowForInvalidPaginationInputs" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ModelAndRepositoryIntegrationTests.ProfileFieldDefinition_KeyShouldBeUniqueAtDatabaseLevel" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="47437ae9-be49-9a5d-cd7d-50ded4aa9ece">
+      <Execution id="5b54b97a-1d16-4b91-92a1-f9fb8554c8c9" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ModelAndRepositoryIntegrationTests" name="ProfileFieldDefinition_KeyShouldBeUniqueAtDatabaseLevel" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectInvalidDynamicFieldDataType" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="a0109f87-3eea-eecf-d15e-a2341c1adc18">
+      <Execution id="aa93c221-f0bb-475f-9303-948c41203580" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="CreateAsync_ShouldRejectInvalidDynamicFieldDataType" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnConflictWhenKeyAlreadyExists" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="d95816a7-e721-fe90-cc4b-5d308e39ecec">
+      <Execution id="28e7f7dd-02e4-4ed9-a47b-3ced7ddbc403" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ProfileFieldDefinitionServiceTests" name="CreateAsync_ShouldReturnConflictWhenKeyAlreadyExists" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldReturnValidationErrorsForMissingCoreColumns" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="3dfd64bb-2c8c-2d43-b5c6-fde4e7775c12">
+      <Execution id="e3f9993e-bd3f-4c95-b8d0-80f5302c21f6" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileServiceTests" name="CreateAsync_ShouldReturnValidationErrorsForMissingCoreColumns" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ProfileFieldDefinitionRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReportMissingRows" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="ce8f0e27-79f1-e875-e18d-ebc41d3fcb6f">
+      <Execution id="669a0ab0-8471-4892-8473-cdd93973b9d1" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ProfileFieldDefinitionRepositoryTests" name="DeleteAsync_ShouldUseHardDeleteAndReportMissingRows" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.PostgreSqlInfrastructureTests.ShouldProvideConnectionStringAndApplyMigrationsAsync" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="918253f5-b514-c0f0-4ee8-f001528cd9ea">
+      <Execution id="1b609230-60c2-456a-85ba-c395944b9dce" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.PostgreSqlInfrastructureTests" name="ShouldProvideConnectionStringAndApplyMigrationsAsync" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ProfileFieldDefinitionRepositoryTests.UpdateAsync_ShouldReturnNullForMissingEntity" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="a4f2a0c0-90dd-72d5-2721-a34f875eee16">
+      <Execution id="73c5c6f2-d6dc-405e-8365-364cdc5f3112" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ProfileFieldDefinitionRepositoryTests" name="UpdateAsync_ShouldReturnNullForMissingEntity" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ApiCrudIntegrationTests.AdminProfileFieldsCrudWorkflow_ShouldSucceed" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="3f18ad0e-0df7-6d67-1d00-5ea6609fb91f">
+      <Execution id="b925fa12-455a-4bff-ab78-dc90725c834e" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ApiCrudIntegrationTests" name="AdminProfileFieldsCrudWorkflow_ShouldSucceed" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ApiCrudIntegrationTests.CandidateAndAdminWorkflow_ShouldSucceedEndToEnd" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="22c0dda0-7276-204b-a271-c3df90358da1">
+      <Execution id="e0de93ca-f668-4322-8ab9-f9619768a24b" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ApiCrudIntegrationTests" name="CandidateAndAdminWorkflow_ShouldSucceedEndToEnd" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.ProfileFieldDefinitionRepositoryTests.CreateAndGetByIdAsync_ShouldPersistAndReturnEntity" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="abe5509d-6ac3-b176-b509-10c387a2a40f">
+      <Execution id="396d600f-3092-4cdc-a98d-abbd5fac3fa9" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.ProfileFieldDefinitionRepositoryTests" name="CreateAndGetByIdAsync_ShouldPersistAndReturnEntity" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldReturnItemsAndTotalCountWithOffsetPagination" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="6c6ac8b8-cd4c-bf86-180b-372c9f7c06f8">
+      <Execution id="8f3f60df-dc5d-406e-b5a5-3010176e8efa" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidateProfileRepositoryTests" name="ListAsync_ShouldReturnItemsAndTotalCountWithOffsetPagination" />
+    </UnitTest>
+    <UnitTest name="Kesa.Tests.CandidatesControllerTests.CreateAsync_ShouldReturnValidationProblemWhenServiceFailsValidation" storage="/users/ktran/kesa/kesa/kesa.tests/bin/debug/net10.0/kesa.tests.dll" id="f77b9ee5-edeb-be24-1586-86be7643bbb4">
+      <Execution id="422836e8-6fe2-4cae-8d9f-c69ee7b9ff7f" />
+      <TestMethod codeBase="/Users/ktran/kesa/Kesa/Kesa.Tests/bin/Debug/net10.0/Kesa.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Kesa.Tests.CandidatesControllerTests" name="CreateAsync_ShouldReturnValidationProblemWhenServiceFailsValidation" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a0109f87-3eea-eecf-d15e-a2341c1adc18" executionId="aa93c221-f0bb-475f-9303-948c41203580" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21ca1ac1-9063-0879-9bd1-7a61525faa3a" executionId="10ace454-9187-4289-9b1b-dc7078ad7626" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a75f4a5-acb4-8155-9d50-43cc27f4cb35" executionId="eeea2c61-b170-4b38-878f-d3e9e4ceb0c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4f2a0c0-90dd-72d5-2721-a34f875eee16" executionId="73c5c6f2-d6dc-405e-8365-364cdc5f3112" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="22c0dda0-7276-204b-a271-c3df90358da1" executionId="e0de93ca-f668-4322-8ab9-f9619768a24b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce8f0e27-79f1-e875-e18d-ebc41d3fcb6f" executionId="669a0ab0-8471-4892-8473-cdd93973b9d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c6ac8b8-cd4c-bf86-180b-372c9f7c06f8" executionId="8f3f60df-dc5d-406e-b5a5-3010176e8efa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3f18ad0e-0df7-6d67-1d00-5ea6609fb91f" executionId="b925fa12-455a-4bff-ab78-dc90725c834e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11945ff8-70e3-d50b-5d5a-b1a623536256" executionId="39097d16-7c3c-4174-87f3-cd210dcf3d39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3dfd64bb-2c8c-2d43-b5c6-fde4e7775c12" executionId="e3f9993e-bd3f-4c95-b8d0-80f5302c21f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a4e1ae9-cef7-0b42-9d97-8c5e83ac065f" executionId="2278d30d-18ab-43c6-8474-c5f583d92c15" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d95816a7-e721-fe90-cc4b-5d308e39ecec" executionId="28e7f7dd-02e4-4ed9-a47b-3ced7ddbc403" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="303e243f-ec96-de77-aa6a-a8e444f10e10" executionId="77bc166d-3cf8-4ef7-b06c-180ca0b9ed2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c080ecbb-6ba4-20ab-0d17-25dc5441121a" executionId="889bc0d0-2a93-46b1-b650-ca5d112bf9d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a5d2e157-5dfa-bef8-edb7-55edb94940e1" executionId="0fcc66cb-953e-4590-9f24-b5b5c5cb9dcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="918253f5-b514-c0f0-4ee8-f001528cd9ea" executionId="1b609230-60c2-456a-85ba-c395944b9dce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa9fa24b-4181-7264-318b-f49aee30639e" executionId="23a199fc-b7c9-4779-8ea0-bf9d716c5d80" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47437ae9-be49-9a5d-cd7d-50ded4aa9ece" executionId="5b54b97a-1d16-4b91-92a1-f9fb8554c8c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2751b551-94d4-7143-02e7-d1dfb6581c7c" executionId="de2024cb-bada-4cea-bb2f-f9d0312fcb37" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="899b84e6-8c25-55ae-3ba2-3333f208834b" executionId="23ad3eb7-bdbd-4320-9d5f-c601c5ceebf1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00eac515-1ef5-daab-bda6-39c5fb0edc21" executionId="3a691ed3-a796-4927-b52d-75f4b10f92cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3fc6bc04-6be1-5d48-5970-ff341405ae21" executionId="e3149919-4b48-4277-b3f6-05296b6965da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f77b9ee5-edeb-be24-1586-86be7643bbb4" executionId="422836e8-6fe2-4cae-8d9f-c69ee7b9ff7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9389c56-b4b1-ab8e-9dc3-463753d9f3a1" executionId="a31294a3-28ab-4c1b-a35a-224dc841b50b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b03cdb79-6507-15b5-81d9-d6752239098f" executionId="ebc99a13-b0d9-4687-99e3-603639005e55" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1acab5e6-9835-cd8a-dfdd-89d6d7282329" executionId="ef26b162-7566-49fe-b99b-31cf016cc5a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a96a702b-a434-2fb2-b9a4-37231dcf3e3e" executionId="e827fa24-444a-4b52-9964-55a634597267" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="abe5509d-6ac3-b176-b509-10c387a2a40f" executionId="396d600f-3092-4cdc-a98d-abbd5fac3fa9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc878fbc-378e-0aff-aad2-e09870d44ca3" executionId="9d89b426-e30c-411a-a8b3-8286e6644f31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="29" executed="29" passed="5" failed="24" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.7)
+[xUnit.net 00:00:00.04]   Discovering: Kesa.Tests
+[xUnit.net 00:00:00.06]   Discovered:  Kesa.Tests
+[xUnit.net 00:00:00.08]   Starting:    Kesa.Tests
+[testcontainers.org 00:00:00.07] Connected to Docker:
+  Host: unix:///var/run/docker.sock
+  Server Version: 29.2.1
+  Kernel Version: 6.12.72-linuxkit
+  API Version: 1.53
+  Operating System: Docker Desktop
+  Total Memory: 7.65 GB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/ktran/Library/Containers/com.docker.docker/Data/docker-cli.sock
+[testcontainers.org 00:00:00.15] Docker container c8c95c83a757 created
+[testcontainers.org 00:00:00.18] Start Docker container c8c95c83a757
+[testcontainers.org 00:00:00.32] Wait for Docker container c8c95c83a757 to complete readiness checks
+[testcontainers.org 00:00:01.35] Docker container c8c95c83a757 ready
+[testcontainers.org 00:00:01.39] Docker container 2126a05bb656 created
+[testcontainers.org 00:00:01.40] Start Docker container 2126a05bb656
+[testcontainers.org 00:00:01.50] Wait for Docker container 2126a05bb656 to complete readiness checks
+[testcontainers.org 00:00:01.51] Execute "pg_isready --host localhost --dbname kesa_test --username postgres" at Docker container 2126a05bb656
+[testcontainers.org 00:00:02.58] Execute "pg_isready --host localhost --dbname kesa_test --username postgres" at Docker container 2126a05bb656
+[testcontainers.org 00:00:02.63] Docker container 2126a05bb656 ready
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/UnitTest1.cs(82,0): at Kesa.Tests.PostgreSqlInfrastructureTests.ShouldProvideConnectionStringAndApplyMigrationsAsync()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionServiceTests.cs(76,0): at Kesa.Tests.ProfileFieldDefinitionServiceTests.DeleteAsync_ShouldReturnNotFoundForMissingDefinition()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionServiceTests.cs(41,0): at Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnConflictWhenKeyAlreadyExists()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionServiceTests.cs(17,0): at Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnValidationErrorForUnsupportedDataType()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionRepositoryTests.cs(16,0): at Kesa.Tests.ProfileFieldDefinitionRepositoryTests.CreateAndGetByIdAsync_ShouldPersistAndReturnEntity()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionRepositoryTests.cs(47,0): at Kesa.Tests.ProfileFieldDefinitionRepositoryTests.UpdateAsync_ShouldReturnNullForMissingEntity()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.29]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.29]       Stack Trace:
+[xUnit.net 00:00:03.29]         /Users/ktran/kesa/Kesa/Kesa.Tests/ProfileFieldDefinitionRepositoryTests.cs(71,0): at Kesa.Tests.ProfileFieldDefinitionRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReportMissingRows()
+[xUnit.net 00:00:03.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/ModelAndRepositoryIntegrationTests.cs(52,0): at Kesa.Tests.ModelAndRepositoryIntegrationTests.CandidateProfile_ForeignKeysShouldSetNullWhenUserIsDeleted()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/ModelAndRepositoryIntegrationTests.cs(18,0): at Kesa.Tests.ModelAndRepositoryIntegrationTests.ProfileFieldDefinition_KeyShouldBeUniqueAtDatabaseLevel()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(136,0): at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectInvalidDynamicFieldDataType()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(86,0): at Kesa.Tests.CandidateProfileServiceTests.CreateAndGetAsync_ShouldEnforceRequiredFieldsAndDeriveAge()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(179,0): at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectEnumValueOutsideAllowedOptions()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(279,0): at Kesa.Tests.CandidateProfileServiceTests.DeleteAsync_ShouldReturnNotFoundWhenCandidateMissing()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(257,0): at Kesa.Tests.CandidateProfileServiceTests.ListAsync_ShouldMapInvalidPaginationToValidationError()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(223,0): at Kesa.Tests.CandidateProfileServiceTests.GetByIdAsync_ShouldDeriveAgeCorrectlyBeforeBirthday()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(18,0): at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldReturnValidationErrorsForMissingCoreColumns()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileServiceTests.cs(50,0): at Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldAllowAdHocCustomFieldKeys()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs(118,0): at Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldThrowForInvalidPaginationInputs()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs(17,0): at Kesa.Tests.CandidateProfileRepositoryTests.CreateGetAndUpdateAsync_ShouldPersistCoreAndCustomFields()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs(60,0): at Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldReturnItemsAndTotalCountWithOffsetPagination()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.30]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/ktran/kesa/Kesa/Kesa.Tests/CandidateProfileRepositoryTests.cs(89,0): at Kesa.Tests.CandidateProfileRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReturnFalseWhenMissing()
+[xUnit.net 00:00:03.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.31]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.31]       Stack Trace:
+[xUnit.net 00:00:03.31]         /Users/ktran/kesa/Kesa/Kesa.Tests/ApiCrudIntegrationTests.cs(133,0): at Kesa.Tests.ApiCrudIntegrationTests.CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders()
+[xUnit.net 00:00:03.31]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.31]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.31]       Stack Trace:
+[xUnit.net 00:00:03.31]         /Users/ktran/kesa/Kesa/Kesa.Tests/ApiCrudIntegrationTests.cs(28,0): at Kesa.Tests.ApiCrudIntegrationTests.AdminProfileFieldsCrudWorkflow_ShouldSucceed()
+[xUnit.net 00:00:03.31]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.31]       Docker unavailable for testcontainers: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'KesaDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+[xUnit.net 00:00:03.31]       Stack Trace:
+[xUnit.net 00:00:03.31]         /Users/ktran/kesa/Kesa/Kesa.Tests/ApiCrudIntegrationTests.cs(73,0): at Kesa.Tests.ApiCrudIntegrationTests.CandidateAndAdminWorkflow_ShouldSucceedEndToEnd()
+[xUnit.net 00:00:03.31]         --- End of stack trace from previous location ---
+[testcontainers.org 00:00:03.16] Delete Docker container 2126a05bb656
+[xUnit.net 00:00:03.53]   Finished:    Kesa.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2180770+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.PostgreSqlInfrastructureTests.ShouldProvideConnectionStringAndApplyMigrationsAsync [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2198690+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.ProfileFieldDefinitionServiceTests.DeleteAsync_ShouldReturnNotFoundForMissingDefinition [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2202260+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnConflictWhenKeyAlreadyExists [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2205450+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.ProfileFieldDefinitionServiceTests.CreateAsync_ShouldReturnValidationErrorForUnsupportedDataType [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2207980+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.ProfileFieldDefinitionRepositoryTests.CreateAndGetByIdAsync_ShouldPersistAndReturnEntity [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2212520+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.ProfileFieldDefinitionRepositoryTests.UpdateAsync_ShouldReturnNullForMissingEntity [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2217400+07:00">
+        <Text>[xUnit.net 00:00:03.29]     Kesa.Tests.ProfileFieldDefinitionRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReportMissingRows [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2230500+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.ModelAndRepositoryIntegrationTests.CandidateProfile_ForeignKeysShouldSetNullWhenUserIsDeleted [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2237430+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.ModelAndRepositoryIntegrationTests.ProfileFieldDefinition_KeyShouldBeUniqueAtDatabaseLevel [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2348570+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectInvalidDynamicFieldDataType [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2348870+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.CreateAndGetAsync_ShouldEnforceRequiredFieldsAndDeriveAge [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2349130+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldRejectEnumValueOutsideAllowedOptions [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2383440+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.DeleteAsync_ShouldReturnNotFoundWhenCandidateMissing [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2384990+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.ListAsync_ShouldMapInvalidPaginationToValidationError [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2385240+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.GetByIdAsync_ShouldDeriveAgeCorrectlyBeforeBirthday [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2385460+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldReturnValidationErrorsForMissingCoreColumns [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2386720+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileServiceTests.CreateAsync_ShouldAllowAdHocCustomFieldKeys [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2387860+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldThrowForInvalidPaginationInputs [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2394040+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileRepositoryTests.CreateGetAndUpdateAsync_ShouldPersistCoreAndCustomFields [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2394260+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileRepositoryTests.ListAsync_ShouldReturnItemsAndTotalCountWithOffsetPagination [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2396490+07:00">
+        <Text>[xUnit.net 00:00:03.30]     Kesa.Tests.CandidateProfileRepositoryTests.DeleteAsync_ShouldUseHardDeleteAndReturnFalseWhenMissing [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2396780+07:00">
+        <Text>[xUnit.net 00:00:03.31]     Kesa.Tests.ApiCrudIntegrationTests.CandidatePreflightRequest_FromFrontendOrigin_ShouldReturnCorsHeaders [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2397020+07:00">
+        <Text>[xUnit.net 00:00:03.31]     Kesa.Tests.ApiCrudIntegrationTests.AdminProfileFieldsCrudWorkflow_ShouldSucceed [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBookPro" outcome="Error" timestamp="2026-05-04T00:59:21.2397200+07:00">
+        <Text>[xUnit.net 00:00:03.31]     Kesa.Tests.ApiCrudIntegrationTests.CandidateAndAdminWorkflow_ShouldSucceedEndToEnd [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

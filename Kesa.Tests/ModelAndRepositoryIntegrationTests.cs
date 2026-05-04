@@ -19,7 +19,7 @@ public sealed class ModelAndRepositoryIntegrationTests(PostgreSqlContainerFixtur
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
 
         await repository.CreateAsync(new DefaultFields
         {

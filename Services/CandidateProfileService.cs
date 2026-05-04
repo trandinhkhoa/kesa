@@ -9,7 +9,7 @@ namespace Kesa.Services;
 /// </summary>
 public sealed class CandidateProfileService(
     ICandidateProfileRepository candidateRepository,
-    IProfileFieldDefinitionRepository fieldDefinitionRepository,
+    IDefaultFieldsRepository fieldDefinitionRepository,
     ILogger<CandidateProfileService> logger) : ICandidateProfileService
 {
     private static readonly HashSet<string> AllowedSexValues = new(StringComparer.OrdinalIgnoreCase)
@@ -259,7 +259,7 @@ public sealed class CandidateProfileService(
         {
             if (!allDefinitions.TryGetValue(key, out var definition))
             {
-                AddError(errors, $"customFields.{key}", "Unknown custom field key.");
+                // Allow ad-hoc custom fields that do not have a matching definition.
                 continue;
             }
 

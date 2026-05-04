@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Kesa.Data;
 
 /// <summary>
-/// EF Core database context for candidate profiles and dynamic field definitions.
+/// EF Core database context for candidate profiles and default profile fields.
 /// </summary>
 public class KesaDbContext : DbContext
 {
@@ -29,9 +29,9 @@ public class KesaDbContext : DbContext
     public DbSet<CandidateProfile> CandidateProfiles => Set<CandidateProfile>();
 
     /// <summary>
-    /// Dynamic field definitions used to validate custom field keys and values.
+    /// Default fields displayed when creating a candidate profile.
     /// </summary>
-    public DbSet<DefaultFields> ProfileFieldDefinitions => Set<DefaultFields>();
+    public DbSet<DefaultFields> DefaultFields => Set<DefaultFields>();
 
     /// <summary>
     /// Configures entity mappings, indexes, constraints, and seed data.

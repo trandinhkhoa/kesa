@@ -201,9 +201,70 @@ button.danger {
   border-color: #f1b6b3;
 }
 
+button.success {
+  background: #137333;
+  color: #fff;
+  border-color: #137333;
+}
+
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+button.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.custom-field-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.custom-field-row label {
+  flex: 1 1 auto;
+}
+
+.remove-field-btn {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.add-field-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.add-field-row input {
+  flex: 1 1 auto;
+}
+
+.add-field-row button {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .badge {

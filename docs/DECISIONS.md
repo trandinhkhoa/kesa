@@ -123,3 +123,9 @@
 **Options considered:** (1) allow only `http://localhost:5173`, (2) allow multiple local origins, (3) allow any origin.
 **Decision:** Configure strict CORS allowlist for `http://localhost:5173` only.
 **Reason:** This unblocks local frontend integration while keeping a narrower and safer policy than wildcard origins.
+
+## Ad-hoc custom field persistence — 2026-05-03
+**Context:** The frontend add/remove custom field UI required the backend to accept field keys that do not have a matching `ProfileFieldDefinition`.
+**Options considered:** (1) relax backend validation to allow any custom field key, (2) restrict the frontend add UI to a dropdown of existing definitions only, (3) auto-create field definitions from the frontend before saving.
+**Decision:** Relax backend validation so `CandidateProfileService` skips validation for unknown custom field keys and persists them as-is in the JSONB payload.
+**Reason:** This is the simplest path to support free-form ad-hoc fields in the UI, keeps the frontend interaction lightweight, and aligns with the user's explicit preference. Fields with matching definitions still undergo type and active-state validation.

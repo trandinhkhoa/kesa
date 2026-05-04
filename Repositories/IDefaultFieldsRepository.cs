@@ -5,7 +5,7 @@ namespace Kesa.Repositories;
 /// <summary>
 /// Defines data-access operations for profile field definitions.
 /// </summary>
-public interface IProfileFieldDefinitionRepository
+public interface IDefaultFieldsRepository
 {
     /// <summary>
     /// Creates a new profile field definition.

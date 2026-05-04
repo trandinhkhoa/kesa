@@ -8,7 +8,7 @@ namespace Kesa.Services;
 /// Implements business rules for profile field definition operations.
 /// </summary>
 public sealed class ProfileFieldDefinitionService(
-    IProfileFieldDefinitionRepository repository,
+    IDefaultFieldsRepository repository,
     ILogger<ProfileFieldDefinitionService> logger) : IProfileFieldDefinitionService
 {
     private static readonly HashSet<string> SupportedDataTypes = new(StringComparer.OrdinalIgnoreCase)

@@ -20,7 +20,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var service = new CandidateProfileService(
             candidateRepository,
@@ -45,14 +45,14 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
     }
 
     [Fact]
-    public async Task CreateAsync_ShouldValidateUnknownCustomFieldKeys()
+    public async Task CreateAsync_ShouldAllowAdHocCustomFieldKeys()
     {
         Assert.False(fixture.DockerUnavailable, $"Docker unavailable for testcontainers: {fixture.DockerUnavailableReason}");
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var service = new CandidateProfileService(
             candidateRepository,
@@ -66,15 +66,18 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
             Sex = "Female",
             CustomFields = new Dictionary<string, JsonElement>(StringComparer.OrdinalIgnoreCase)
             {
-                ["unknownField"] = JsonDocument.Parse("\"value\"").RootElement.Clone()
+                ["adhocField"] = JsonDocument.Parse("\"ad-hoc value\"").RootElement.Clone()
             }
         });
 
-        Assert.False(result.IsSuccess);
-        Assert.NotNull(result.Error);
-        Assert.Equal(ServiceErrorCodes.ValidationError, result.Error!.Code);
-        Assert.NotNull(result.Error.ValidationErrors);
-        Assert.Contains("customFields.unknownField", result.Error.ValidationErrors!.Keys, StringComparer.OrdinalIgnoreCase);
+        Assert.True(result.IsSuccess);
+        Assert.NotNull(result.Value);
+
+        var getResult = await service.GetByIdAsync(result.Value!.Id);
+        Assert.True(getResult.IsSuccess);
+        Assert.NotNull(getResult.Value);
+        Assert.True(getResult.Value!.CustomFields.TryGetValue("adhocField", out var persistedValue));
+        Assert.Equal("ad-hoc value", persistedValue.GetString());
     }
 
     [Fact]
@@ -85,7 +88,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var fieldService = new ProfileFieldDefinitionService(fieldDefinitionRepository, NullLogger<ProfileFieldDefinitionService>.Instance);
         var candidateService = new CandidateProfileService(
@@ -135,7 +138,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var fieldService = new ProfileFieldDefinitionService(fieldDefinitionRepository, NullLogger<ProfileFieldDefinitionService>.Instance);
         var candidateService = new CandidateProfileService(
@@ -178,7 +181,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var fieldService = new ProfileFieldDefinitionService(fieldDefinitionRepository, NullLogger<ProfileFieldDefinitionService>.Instance);
         var candidateService = new CandidateProfileService(
@@ -222,7 +225,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var candidateService = new CandidateProfileService(
             candidateRepository,
@@ -256,7 +259,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var service = new CandidateProfileService(
             candidateRepository,
@@ -278,7 +281,7 @@ public sealed class CandidateProfileServiceTests(PostgreSqlContainerFixture fixt
 
         await using var context = fixture.CreateDbContext();
         var candidateRepository = new CandidateProfileRepository(context);
-        var fieldDefinitionRepository = new ProfileFieldDefinitionRepository(context);
+        var fieldDefinitionRepository = new DefaultFieldsRepository(context);
 
         var service = new CandidateProfileService(
             candidateRepository,

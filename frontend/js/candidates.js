@@ -23,6 +23,9 @@ function formatDateOnly(value) {
 }
 
 function buildCustomFieldControl(definition, value) {
+  const row = document.createElement("div");
+  row.className = "custom-field-row";
+
   const wrapper = document.createElement("label");
   wrapper.dataset.fieldKey = definition.key;
   wrapper.dataset.fieldType = definition.dataType;
@@ -83,8 +86,19 @@ function buildCustomFieldControl(definition, value) {
 
   input.dataset.customInput = "true";
   wrapper.appendChild(input);
+  row.appendChild(wrapper);
 
-  return wrapper;
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.className = "danger remove-field-btn";
+  removeBtn.textContent = "−";
+  removeBtn.title = "Xóa trường";
+  removeBtn.addEventListener("click", () => {
+    row.remove();
+  });
+  row.appendChild(removeBtn);
+
+  return row;
 }
 
 function renderCandidateRows() {
@@ -152,9 +166,26 @@ function setCandidateMode(mode) {
     }
   });
   submitButton.disabled = isReadonly;
+
+  const addRow = getById("candidate-add-custom-field");
+  if (addRow) {
+    addRow.querySelectorAll("input,button").forEach((node) => {
+      node.disabled = isReadonly;
+    });
+    addRow.classList.toggle("hidden", isReadonly);
+  }
+
+  const showRemoveButtons = mode === "edit";
+  getById("candidate-custom-fields").querySelectorAll(".remove-field-btn").forEach((btn) => {
+    btn.disabled = !showRemoveButtons;
+    btn.classList.toggle("hidden", !showRemoveButtons);
+  });
 }
 
 function buildGenericFieldControl(key, value) {
+  const row = document.createElement("div");
+  row.className = "custom-field-row";
+
   const wrapper = document.createElement("label");
   wrapper.dataset.fieldKey = key;
   wrapper.dataset.fieldType = "String";
@@ -168,28 +199,35 @@ function buildGenericFieldControl(key, value) {
     input.value = String(value);
   }
   wrapper.appendChild(input);
+  row.appendChild(wrapper);
 
-  return wrapper;
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.className = "danger remove-field-btn";
+  removeBtn.textContent = "−";
+  removeBtn.title = "Xóa trường";
+  removeBtn.addEventListener("click", () => {
+    row.remove();
+  });
+  row.appendChild(removeBtn);
+
+  return row;
 }
 
 function renderDynamicCustomFields(customValues = {}) {
   const container = getById("candidate-custom-fields");
   container.innerHTML = "";
 
-  const keys = Object.keys(customValues);
-  if (!keys.length) {
-    return;
-  }
+  const activeDefinitions = state.fieldDefinitions.filter((d) => d.isActive);
+  activeDefinitions.forEach((definition) => {
+    const value = customValues[definition.key];
+    container.appendChild(buildCustomFieldControl(definition, value));
+  });
 
-  keys.forEach((key) => {
-    const definition = state.fieldDefinitions.find(
-      (d) => d.key === key && d.isActive
-    );
-    const value = customValues[key];
-    if (definition) {
-      container.appendChild(buildCustomFieldControl(definition, value));
-    } else {
-      container.appendChild(buildGenericFieldControl(key, value));
+  const definitionKeys = new Set(activeDefinitions.map((d) => d.key));
+  Object.keys(customValues).forEach((key) => {
+    if (!definitionKeys.has(key)) {
+      container.appendChild(buildGenericFieldControl(key, customValues[key]));
     }
   });
 }
@@ -423,6 +461,35 @@ async function handleCandidateSubmit(event) {
   }
 }
 
+function handleAddCustomField() {
+  const nameInput = getById("new-custom-field-name");
+  const valueInput = getById("new-custom-field-value");
+  const key = nameInput.value.trim();
+  const value = valueInput.value;
+
+  if (!key) {
+    showNotification("Tên trường không được để trống.", "error");
+    return;
+  }
+
+  const container = getById("candidate-custom-fields");
+  const existing = container.querySelector(`label[data-field-key="${CSS.escape(key)}"]`);
+  if (existing) {
+    showNotification("Trường này đã tồn tại.", "error");
+    return;
+  }
+
+  const definition = state.fieldDefinitions.find((d) => d.key === key && d.isActive);
+  const row = definition
+    ? buildCustomFieldControl(definition, value)
+    : buildGenericFieldControl(key, value);
+
+  container.appendChild(row);
+  nameInput.value = "";
+  valueInput.value = "";
+  nameInput.focus();
+}
+
 function goToPreviousPage() {
   if (state.candidatePaging.pageNumber <= 1) {
     return;
@@ -458,6 +525,7 @@ export function rerenderCandidateCustomFieldsPreservingValues() {
   });
 
   renderDynamicCustomFields(currentValues);
+  setCandidateMode(state.candidateMode);
 }
 
 export function initializeCandidateModule() {
@@ -467,6 +535,7 @@ export function initializeCandidateModule() {
   getById("candidate-cancel-btn").addEventListener("click", resetCandidateForm);
   getById("candidate-prev-page").addEventListener("click", goToPreviousPage);
   getById("candidate-next-page").addEventListener("click", goToNextPage);
+  getById("add-custom-field-btn").addEventListener("click", handleAddCustomField);
 
   resetCandidateForm();
 }

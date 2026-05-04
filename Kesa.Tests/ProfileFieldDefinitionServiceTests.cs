@@ -18,7 +18,7 @@ public sealed class ProfileFieldDefinitionServiceTests(PostgreSqlContainerFixtur
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
         var service = new ProfileFieldDefinitionService(repository, NullLogger<ProfileFieldDefinitionService>.Instance);
 
         var result = await service.CreateAsync(new CreateProfileFieldDefinitionRequest
@@ -42,7 +42,7 @@ public sealed class ProfileFieldDefinitionServiceTests(PostgreSqlContainerFixtur
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
         var service = new ProfileFieldDefinitionService(repository, NullLogger<ProfileFieldDefinitionService>.Instance);
 
         var first = await service.CreateAsync(new CreateProfileFieldDefinitionRequest
@@ -77,7 +77,7 @@ public sealed class ProfileFieldDefinitionServiceTests(PostgreSqlContainerFixtur
         await fixture.ResetDatabaseAsync();
 
         await using var context = fixture.CreateDbContext();
-        var repository = new ProfileFieldDefinitionRepository(context);
+        var repository = new DefaultFieldsRepository(context);
         var service = new ProfileFieldDefinitionService(repository, NullLogger<ProfileFieldDefinitionService>.Instance);
 
         var result = await service.DeleteAsync(Guid.NewGuid());

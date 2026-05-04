@@ -7,7 +7,7 @@ namespace Kesa.Repositories;
 /// <summary>
 /// EF Core repository for profile field definition persistence operations.
 /// </summary>
-public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : IProfileFieldDefinitionRepository
+public sealed class DefaultFieldsRepository(KesaDbContext dbContext) : IDefaultFieldsRepository
 {
     /// <inheritdoc />
     public async Task<DefaultFields> CreateAsync(
@@ -16,7 +16,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
     {
         await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
 
-        dbContext.ProfileFieldDefinitions.Add(fieldDefinition);
+        dbContext.DefaultFields.Add(fieldDefinition);
         await dbContext.SaveChangesAsync(cancellationToken);
 
         await transaction.CommitAsync(cancellationToken);
@@ -29,7 +29,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
         Guid id,
         CancellationToken cancellationToken = default)
     {
-        return dbContext.ProfileFieldDefinitions
+        return dbContext.DefaultFields
             .AsNoTracking()
             .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
@@ -39,7 +39,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
         string key,
         CancellationToken cancellationToken = default)
     {
-        return dbContext.ProfileFieldDefinitions
+        return dbContext.DefaultFields
             .AsNoTracking()
             .SingleOrDefaultAsync(x => x.Key == key, cancellationToken);
     }
@@ -48,7 +48,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
     public async Task<IReadOnlyList<DefaultFields>> ListAsync(
         CancellationToken cancellationToken = default)
     {
-        return await dbContext.ProfileFieldDefinitions
+        return await dbContext.DefaultFields
             .AsNoTracking()
             .OrderBy(x => x.Name)
             .ThenBy(x => x.Key)
@@ -60,7 +60,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
         DefaultFields fieldDefinition,
         CancellationToken cancellationToken = default)
     {
-        var existing = await dbContext.ProfileFieldDefinitions
+        var existing = await dbContext.DefaultFields
             .SingleOrDefaultAsync(x => x.Id == fieldDefinition.Id, cancellationToken);
 
         if (existing is null)
@@ -91,7 +91,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
         Guid id,
         CancellationToken cancellationToken = default)
     {
-        var existing = await dbContext.ProfileFieldDefinitions
+        var existing = await dbContext.DefaultFields
             .SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
 
         if (existing is null)
@@ -101,7 +101,7 @@ public sealed class ProfileFieldDefinitionRepository(KesaDbContext dbContext) : 
 
         await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
 
-        dbContext.ProfileFieldDefinitions.Remove(existing);
+        dbContext.DefaultFields.Remove(existing);
         await dbContext.SaveChangesAsync(cancellationToken);
 
         await transaction.CommitAsync(cancellationToken);
