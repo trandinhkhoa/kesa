@@ -41,6 +41,41 @@ Set base URL for curl examples:
 BASE_URL="http://localhost:8080"
 ```
 
+## Remote hosting (Linode VM)
+
+### One-time VM setup
+The VM requires Docker Compose v2. The default Ubuntu package `docker-compose-plugin` is unavailable on this image, so install the binary directly:
+
+```bash
+curl -SL https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
+
+### Deploy / update
+From your local machine, sync the project and restart the stack:
+
+```bash
+rsync -av --exclude='.git' --exclude='obj' --exclude='bin' . root@<VM_IP>:/root/app/
+ssh root@<VM_IP> "cd /root/app && docker-compose up -d --force-recreate"
+```
+
+If old containers from a previous docker-compose v1 run are blocking the start:
+
+```bash
+ssh root@<VM_IP> "docker rm -f \$(docker ps -aq); cd /root/app && docker-compose up -d"
+```
+
+### Access
+- **UI:** `http://<VM_IP>:5173`
+- **API:** `http://<VM_IP>:8080` (direct, bypass nginx)
+
+### Architecture notes
+- nginx (port 5173) proxies `/api/` requests to the `backend` container internally — no CORS headers needed.
+- The backend runs `rm -rf obj bin` on startup to avoid NuGet cache incompatibility between macOS-built artifacts and the Linux container.
+- Migrations run automatically on every backend startup via `dotnet-ef database update`.
+
+---
+
 ## API test queries used so far
 
 ### 1) Check API is up
