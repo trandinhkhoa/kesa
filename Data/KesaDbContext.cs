@@ -146,7 +146,7 @@ public class KesaDbContext : DbContext
                 new DefaultFields
                 {
                     Id = addressFieldId,
-                    Name = "Address",
+                    Name = "Dia Chi",
                     Key = "address",
                     DataType = "String",
                     IsRequired = false,
@@ -159,12 +159,12 @@ public class KesaDbContext : DbContext
                 new DefaultFields
                 {
                     Id = religionFieldId,
-                    Name = "Religion",
+                    Name = "Ton giao",
                     Key = "religion",
                     DataType = "Enum",
                     IsRequired = false,
                     IsActive = true,
-                    OptionsJson = JsonSerializer.Serialize(new[] { "buddism", "christian", "others" }),
+                    OptionsJson = JsonSerializer.Serialize(new[] { "Dao Phat", "Dao Thien Chua", "Khac" }),
                     CreatedBy = null,
                     CreatedAt = seedTimestamp,
                     UpdatedAt = seedTimestamp
@@ -172,12 +172,12 @@ public class KesaDbContext : DbContext
                 new DefaultFields
                 {
                     Id = marriageFieldId,
-                    Name = "Marriage",
+                    Name = "Hon Nhan",
                     Key = "marriage",
                     DataType = "Enum",
                     IsRequired = false,
                     IsActive = true,
-                    OptionsJson = JsonSerializer.Serialize(new[] { "no", "married", "divoced", "widowed" }),
+                    OptionsJson = JsonSerializer.Serialize(new[] { "Da Ket Hon", "Doc Than", "Ly Di", "Goa" }),
                     CreatedBy = null,
                     CreatedAt = seedTimestamp,
                     UpdatedAt = seedTimestamp

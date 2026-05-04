@@ -86,9 +86,9 @@ namespace Kesa.Data.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "DataType", "IsActive", "IsRequired", "Key", "Name", "OptionsJson", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { new Guid("4e32edf0-8be8-4d83-aec8-244fdb6aa8c5"), new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc), null, "Enum", true, false, "marriage", "Marriage", "[\"no\",\"married\",\"divoced\",\"widowed\"]", new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc) },
-                    { new Guid("620f56ef-edf6-4a18-84fd-72a19f887cbc"), new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc), null, "Enum", true, false, "religion", "Religion", "[\"buddism\",\"christian\",\"others\"]", new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc) },
-                    { new Guid("8ddc8f74-4d9d-4623-96f6-4adfa1a6ea09"), new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc), null, "String", true, false, "address", "Address", null, new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc) }
+                    { new Guid("4e32edf0-8be8-4d83-aec8-244fdb6aa8c5"), new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc), null, "Enum", true, false, "marriage", "Hon Nhan", "[\"Da Ket Hon\",\"Doc Than\",\"Ly Di\",\"Goa\"]", new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc) },
+                    { new Guid("620f56ef-edf6-4a18-84fd-72a19f887cbc"), new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc), null, "Enum", true, false, "religion", "Ton giao", "[\"Dao Phat\",\"Dao Thien Chua\",\"Khac\"]", new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc) },
+                    { new Guid("8ddc8f74-4d9d-4623-96f6-4adfa1a6ea09"), new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc), null, "String", true, false, "address", "Dia Chi", null, new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc) }
                 });
 
             migrationBuilder.CreateIndex(

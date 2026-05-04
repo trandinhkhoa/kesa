@@ -41,7 +41,7 @@ public sealed class CandidateProfileRepositoryTests(PostgreSqlContainerFixture f
             Name = "Alice Tran",
             BirthDate = created.BirthDate,
             Sex = created.Sex,
-            CustomFields = JsonDocument.Parse("{\"address\":\"Da Nang\",\"religion\":\"others\"}"),
+            CustomFields = JsonDocument.Parse("{\"address\":\"Da Nang\",\"religion\":\"Khac\"}"),
             CreatedAt = created.CreatedAt,
             UpdatedAt = DateTime.UtcNow
         });

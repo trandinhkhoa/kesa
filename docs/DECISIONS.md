@@ -55,7 +55,7 @@
 ## Baseline dynamic field seed set — 2026-04-25
 **Context:** Phase 1 migration seed data needed default admin-defined fields for dynamic profile attributes.
 **Options considered:** (1) no defaults, (2) seed requested baseline fields, (3) config-driven seed source.
-**Decision:** Seed `address`, `religion` (`buddism`, `christian`, `others`), and `marriage` (`no`, `married`, `divoced`, `widowed`).
+**Decision:** Seed `address`, `religion` (`Dao Phat`, `Dao Thien Chua`, `Khac`), and `marriage` (`Da Ket Hon`, `Doc Than`, `Ly Di`, `Goa`).
 **Reason:** This matches explicit user requirements while keeping startup data minimal.
 
 ## Phase 1 test infrastructure stack — 2026-04-25

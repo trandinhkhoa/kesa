@@ -63,7 +63,7 @@ curl -i -X POST "$BASE_URL/api/v1/candidates" \
     "sex": "Female",
     "customFields": {
       "address": "HCMC",
-      "religion": "others",
+      "religion": "Khac",
       "marriage": "no"
     }
   }'
@@ -89,8 +89,8 @@ curl -i -X PUT "$BASE_URL/api/v1/candidates/<CANDIDATE_ID>" \
     "sex": "Female",
     "customFields": {
       "address": "Da Nang",
-      "religion": "christian",
-      "marriage": "married"
+      "religion": "Dao Thien Chua",
+      "marriage": "Doc Than"
     }
   }'
 ```
@@ -123,7 +123,7 @@ curl -i -X POST "$BASE_URL/api/v1/candidates" \
     "sex": "Male",
     "customFields": {
       "address": "Hanoi",
-      "religion": "others",
+      "religion": "Khac",
       "marriage": "no",
       "yearsExperience": 5
     }
@@ -140,8 +140,8 @@ curl -i -X PUT "$BASE_URL/api/v1/candidates/cd2b14dc-5e9d-44ac-8e31-acf3a68e6458
     "sex": "Female",
     "customFields": {
       "address": "Da Nang",
-      "marriage": "married",
-      "religion": "christian",
+      "marriage": "Doc Than",
+      "religion": "Dao Thien Chua",
       "yearsExperience": 4
     }
   }'

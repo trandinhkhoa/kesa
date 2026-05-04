@@ -131,7 +131,7 @@ namespace Kesa.Data.Migrations
                             IsActive = true,
                             IsRequired = false,
                             Key = "address",
-                            Name = "Address",
+                            Name = "Dia Chi",
                             UpdatedAt = new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
@@ -142,8 +142,8 @@ namespace Kesa.Data.Migrations
                             IsActive = true,
                             IsRequired = false,
                             Key = "religion",
-                            Name = "Religion",
-                            OptionsJson = "[\"buddism\",\"christian\",\"others\"]",
+                            Name = "Ton giao",
+                            OptionsJson = "[\"Dao Phat\",\"Dao Thien Chua\",\"Khac\"]",
                             UpdatedAt = new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
@@ -154,8 +154,8 @@ namespace Kesa.Data.Migrations
                             IsActive = true,
                             IsRequired = false,
                             Key = "marriage",
-                            Name = "Marriage",
-                            OptionsJson = "[\"no\",\"married\",\"divoced\",\"widowed\"]",
+                            Name = "Hon Nhan",
+                            OptionsJson = "[\"Da Ket Hon\",\"Doc Than\",\"Ly Di\",\"Goa\"]",
                             UpdatedAt = new DateTime(2026, 4, 25, 0, 0, 0, 0, DateTimeKind.Utc)
                         });
                 });
