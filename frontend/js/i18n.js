@@ -38,6 +38,7 @@ const vi = {
   updateField: "Cập Nhật Trường",
   reset: "Đặt Lại",
 
+  fieldName: "Tên trường",
   key: "Khóa",
   type: "Loại",
   required: "Bắt Buộc",
