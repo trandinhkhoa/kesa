@@ -159,3 +159,51 @@ Deliverable:
 - Dynamic fields in candidate form reflect active backend definitions.
 - Backend validation errors are visible and understandable in UI.
 - End-to-end local testing works with Docker Compose backend setup.
+
+---
+
+## Changelog
+
+### Phase 7: Candidate page-based navigation (hash router)
+
+**Goal:** Split the candidate section from a side-by-side list+form layout into two distinct pages navigated by URL hash.
+
+**New file: `js/router.js`**
+A minimal client-side hash router. Supports parameterised patterns (e.g. `/candidates/:id/edit`). `route(pattern, handler)` registers a handler; `navigate(path)` sets `window.location.hash`; `initRouter()` attaches the `hashchange` listener and dispatches the initial route.
+
+**URL scheme:**
+| Hash | Page |
+|------|------|
+| `#/candidates` | Candidate list (default) |
+| `#/candidates/new` | Candidate create form |
+| `#/candidates/:id/edit` | Candidate edit form |
+| `#/candidates/:id/view` | Candidate view (read-only) |
+| `#/fields` | Profile field definitions panel |
+
+**`index.html` changes**
+- Removed the `.panel-grid` two-column layout from the candidates section.
+- Added `#candidate-list-view`: full-width card with table, pagination, and a `+ Ứng Viên Mới` button in the header.
+- Added `#candidate-detail-view`: a constrained-width card (`max-width: 680px`) containing the same form used for create, edit, and view — only the mode badge and field editability differ. Includes a `← Quay Lại` back button.
+- The Fields panel is unchanged (still uses the side-by-side `.panel-grid` layout).
+
+**`js/candidates.js` changes**
+- Imported `navigate` from `router.js`.
+- Table row buttons (View, Edit) now call `navigate(...)` instead of directly filling the inline form.
+- Exported three route-handler functions: `showCandidateList`, `showCandidateCreate`, `showCandidateDetail(id, mode)`.
+- After a successful create or update, `navigate('/candidates')` returns the user to the list.
+- After a 404 error on open, redirects to `/candidates` instead of resetting the inline form.
+- `initializeCandidateModule` wires the new `candidate-new-btn` and `candidate-back-btn` buttons.
+
+**`js/main.js` changes**
+- Imports `initRouter`, `navigate`, `route` from `router.js`.
+- `initializeTabs` now calls `navigate('/candidates')` / `navigate('/fields')` instead of the old `switchTab` helper directly.
+- `registerRoutes()` maps the four candidate routes and the fields route; each calls `switchTab` then the appropriate show function.
+- `initRouter()` is called at the end of `bootstrap()`, after data is loaded, so the initial route dispatches with field definitions already in state.
+
+**`js/i18n.js` changes**
+- Added `newCandidate: "+ Ứng Viên Mới"` and `backToList: "← Quay Lại"`.
+
+**`styles.css` changes**
+- `.header-actions`: flex row for the list-page header buttons.
+- `.page-header-left`: flex row for the back button + title in the detail-page header.
+- `.detail-view`: caps width at `680px` so the form does not stretch full-viewport on wide screens.

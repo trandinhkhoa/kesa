@@ -21,22 +21,28 @@
   <div id="notification" class="notification hidden" role="status" aria-live="polite"></div>
 
   <nav class="tabs" aria-label="Main sections">
-    <button id="tab-candidates" class="tab active" data-tab="candidates" data-i18n="tabCandidates">Candidates</button>
-    <button id="tab-fields" class="tab" data-tab="fields" data-i18n="tabFields">Profile Field Definitions</button>
+    <button id="tab-candidates" class="tab active" data-i18n="tabCandidates">Candidates</button>
+    <button id="tab-fields" class="tab" data-i18n="tabFields">Profile Field Definitions</button>
   </nav>
 
   <main>
+    <!-- ── CANDIDATES PANEL ── -->
     <section id="panel-candidates" class="panel">
-      <div class="panel-grid">
+
+      <!-- List page -->
+      <div id="candidate-list-view">
         <article class="card">
           <div class="card-header">
             <h2 data-i18n="candidateListTitle">Candidate List</h2>
-            <button id="candidate-refresh-btn" class="secondary icon-btn" title="Refresh" aria-label="Refresh">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 4 23 10 17 10"></polyline>
-                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-              </svg>
-            </button>
+            <div class="header-actions">
+              <button id="candidate-new-btn" data-i18n="newCandidate">+ New Candidate</button>
+              <button id="candidate-refresh-btn" class="secondary icon-btn" title="Refresh" aria-label="Refresh">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div class="table-wrap">
@@ -62,10 +68,16 @@
             <button id="candidate-next-page" class="secondary" data-i18n="next">Next</button>
           </div>
         </article>
+      </div>
 
+      <!-- Detail page (create / edit / view) -->
+      <div id="candidate-detail-view" class="hidden detail-view">
         <article class="card">
           <div class="card-header">
-            <h2 data-i18n="candidateFormTitle">Candidate Form</h2>
+            <div class="page-header-left">
+              <button id="candidate-back-btn" class="secondary" data-i18n="backToList">← Back</button>
+              <h2 data-i18n="candidateFormTitle">Candidate Form</h2>
+            </div>
             <span id="candidate-mode-badge" class="badge">Create</span>
           </div>
 
@@ -111,8 +123,10 @@
           </form>
         </article>
       </div>
+
     </section>
 
+    <!-- ── FIELDS PANEL ── -->
     <section id="panel-fields" class="panel hidden">
       <div class="panel-grid">
         <article class="card">

@@ -51,6 +51,9 @@ const vi = {
   enum: "Liệt Kê",
   enumOptionsLabel: "Tùy Chọn Liệt Kê (phân cách bằng dấu phẩy)",
 
+  newCandidate: "+ Ứng Viên Mới",
+  backToList: "← Quay Lại",
+
   yes: "Có",
   no: "Không",
   view: "Xem",

@@ -1,6 +1,7 @@
 import { del, get, post, put } from "./api.js";
 import { state } from "./state.js";
 import { t } from "./i18n.js";
+import { navigate } from "./router.js";
 import {
   clearFormErrors,
   confirmDelete,
@@ -368,11 +369,11 @@ async function openCandidate(id, mode) {
     showNotification(mode === "view" ? t("candidateLoadedRead") : t("candidateLoadedEdit"));
   } catch (error) {
     const messages = mapApiErrorToMessages(error);
-    showNotification(messages[0], "error", loadCandidates);
+    showNotification(messages[0], "error");
 
     if (error.status === 404) {
       await loadCandidates();
-      resetCandidateForm();
+      navigate("/candidates");
     }
   }
 }
@@ -383,12 +384,12 @@ async function handleCandidateTableClick(event) {
   const deleteId = event.target.dataset.candidateDelete;
 
   if (viewId) {
-    await openCandidate(viewId, "view");
+    navigate(`/candidates/${viewId}/view`);
     return;
   }
 
   if (editId) {
-    await openCandidate(editId, "edit");
+    navigate(`/candidates/${editId}/edit`);
     return;
   }
 
@@ -401,10 +402,6 @@ async function handleCandidateTableClick(event) {
       await del(`/api/v1/candidates/${deleteId}`);
       showNotification(t("candidateDeleted"));
       await loadCandidates();
-
-      if (state.selectedCandidateId === deleteId) {
-        resetCandidateForm();
-      }
     } catch (error) {
       const messages = mapApiErrorToMessages(error);
       showNotification(messages[0], "error", loadCandidates);
@@ -436,7 +433,7 @@ async function handleCandidateSubmit(event) {
     }
 
     await loadCandidates();
-    resetCandidateForm();
+    navigate("/candidates");
   } catch (error) {
     const messages = mapApiErrorToMessages(error);
     showFormErrors("candidate-form-errors", messages);
@@ -444,7 +441,7 @@ async function handleCandidateSubmit(event) {
     if (error.status === 404) {
       showNotification(t("candidateNotFound"), "error", loadCandidates);
       await loadCandidates();
-      resetCandidateForm();
+      navigate("/candidates");
       return;
     }
 
@@ -528,6 +525,25 @@ export function rerenderCandidateCustomFieldsPreservingValues() {
   setCandidateMode(state.candidateMode);
 }
 
+// ── Route handlers (called by router) ──
+
+export function showCandidateList() {
+  getById("candidate-list-view").classList.remove("hidden");
+  getById("candidate-detail-view").classList.add("hidden");
+}
+
+export function showCandidateCreate() {
+  resetCandidateForm();
+  getById("candidate-list-view").classList.add("hidden");
+  getById("candidate-detail-view").classList.remove("hidden");
+}
+
+export async function showCandidateDetail(id, mode) {
+  getById("candidate-list-view").classList.add("hidden");
+  getById("candidate-detail-view").classList.remove("hidden");
+  await openCandidate(id, mode);
+}
+
 export function initializeCandidateModule() {
   getById("candidate-form").addEventListener("submit", handleCandidateSubmit);
   getById("candidate-table-body").addEventListener("click", handleCandidateTableClick);
@@ -536,6 +552,6 @@ export function initializeCandidateModule() {
   getById("candidate-prev-page").addEventListener("click", goToPreviousPage);
   getById("candidate-next-page").addEventListener("click", goToNextPage);
   getById("add-custom-field-btn").addEventListener("click", handleAddCustomField);
-
-  resetCandidateForm();
+  getById("candidate-new-btn").addEventListener("click", () => navigate("/candidates/new"));
+  getById("candidate-back-btn").addEventListener("click", () => navigate("/candidates"));
 }
