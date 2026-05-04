@@ -35,7 +35,7 @@
           <div class="card-header">
             <h2 data-i18n="candidateListTitle">Candidate List</h2>
             <div class="header-actions">
-              <button id="candidate-new-btn" data-i18n="newCandidate">+ New Candidate</button>
+              <button id="candidate-new-btn" class="success" data-i18n="newCandidate">+ New Candidate</button>
               <button id="candidate-refresh-btn" class="secondary icon-btn" title="Refresh" aria-label="Refresh">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 4 23 10 17 10"></polyline>
@@ -78,7 +78,10 @@
               <button id="candidate-back-btn" class="secondary" data-i18n="backToList">← Back</button>
               <h2 data-i18n="candidateFormTitle">Candidate Form</h2>
             </div>
-            <span id="candidate-mode-badge" class="badge">Create</span>
+            <div class="header-actions">
+              <button id="candidate-edit-btn" class="hidden" data-i18n="edit">Edit</button>
+              <span id="candidate-mode-badge" class="badge">Create</span>
+            </div>
           </div>
 
           <form id="candidate-form" novalidate>
@@ -118,7 +121,6 @@
 
             <div class="form-actions">
               <button id="candidate-submit-btn" type="submit">Create Candidate</button>
-              <button id="candidate-cancel-btn" class="secondary" type="button" data-i18n="reset">Reset</button>
             </div>
           </form>
         </article>

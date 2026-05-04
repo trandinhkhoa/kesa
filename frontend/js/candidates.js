@@ -124,7 +124,7 @@ function renderCandidateRows() {
         <td>
           <div class="row-actions">
             <button class="secondary" data-candidate-view="${item.id}">${t("view")}</button>
-            <button class="secondary" data-candidate-edit="${item.id}">${t("edit")}</button>
+            <button data-candidate-edit="${item.id}">${t("edit")}</button>
             <button class="danger" data-candidate-delete="${item.id}">${t("deleteAction")}</button>
           </div>
         </td>
@@ -160,6 +160,8 @@ function setCandidateMode(mode) {
     submitButton.textContent = t("createCandidate");
   }
 
+  getById("candidate-edit-btn").classList.toggle("hidden", mode !== "view");
+
   const isReadonly = mode === "view";
   getById("candidate-form").querySelectorAll("input,select").forEach((node) => {
     if (node.id !== "candidate-id") {
@@ -167,6 +169,7 @@ function setCandidateMode(mode) {
     }
   });
   submitButton.disabled = isReadonly;
+  submitButton.classList.toggle("hidden", isReadonly);
 
   const addRow = getById("candidate-add-custom-field");
   if (addRow) {
@@ -548,10 +551,10 @@ export function initializeCandidateModule() {
   getById("candidate-form").addEventListener("submit", handleCandidateSubmit);
   getById("candidate-table-body").addEventListener("click", handleCandidateTableClick);
   getById("candidate-refresh-btn").addEventListener("click", loadCandidates);
-  getById("candidate-cancel-btn").addEventListener("click", resetCandidateForm);
-  getById("candidate-prev-page").addEventListener("click", goToPreviousPage);
+getById("candidate-prev-page").addEventListener("click", goToPreviousPage);
   getById("candidate-next-page").addEventListener("click", goToNextPage);
   getById("add-custom-field-btn").addEventListener("click", handleAddCustomField);
   getById("candidate-new-btn").addEventListener("click", () => navigate("/candidates/new"));
   getById("candidate-back-btn").addEventListener("click", () => navigate("/candidates"));
+  getById("candidate-edit-btn").addEventListener("click", () => navigate(`/candidates/${state.selectedCandidateId}/edit`));
 }
